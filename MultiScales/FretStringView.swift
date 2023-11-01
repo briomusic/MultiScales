@@ -35,7 +35,6 @@ struct FretStringView: View {
 	private func stringView(with proxy: GeometryProxy) -> some View {
 		Color.primary
 			.frame(width: 1, height: proxy.size.height )
-//			.offset(CGSize(width: 0, height: -5))
 	}
 	
 	private func adaptiveFretView(with proxy: GeometryProxy) -> some View {

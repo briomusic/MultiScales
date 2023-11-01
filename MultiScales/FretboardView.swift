@@ -31,14 +31,13 @@ struct FretboardView: View {
 	var byStrings: some View {
 		HStack(spacing: 0) {
 			StringView(stringPosition: .fretNumbers, frets: frets)
-			HStack(spacing: 0) {
-				StringView(stringPosition: .first, frets: frets)
-				StringView(stringPosition: .middle, frets: frets)
-				StringView(stringPosition: .middle, frets: frets)
-				StringView(stringPosition: .middle, frets: frets)
-				StringView(stringPosition: .middle, frets: frets)
-				StringView(stringPosition: .last, frets: frets)
-			}
+				.frame(width: 30)
+			StringView(stringPosition: .first, frets: frets)
+			StringView(stringPosition: .middle, frets: frets)
+			StringView(stringPosition: .middle, frets: frets)
+			StringView(stringPosition: .middle, frets: frets)
+			StringView(stringPosition: .middle, frets: frets)
+			StringView(stringPosition: .last, frets: frets)
 		}
 	}
 }

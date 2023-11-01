@@ -16,9 +16,10 @@ struct FretNumberView: View {
 			return "\(fretNumber)"
 		}
 	}
+	
 	var body: some View {
 		Text(fretNumberString)
-			.font(.system(size: 24, weight: .medium))
+			.font(.system(size: 30, weight: .medium))
 	}
 }
 

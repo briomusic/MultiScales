@@ -12,13 +12,16 @@ struct StringView: View {
 	var frets: [Fret]
 
     var body: some View {
-		VStack(spacing: 0) {
-			ForEach(frets) { fret in
-				switch stringPosition {
-				case .fretNumbers:
-					FretNumberView(fretNumber: fret.number)
-				default:
-					FretStringView(showFinger: true, stringPosition: stringPosition)
+		GeometryReader { proxy in
+			VStack(spacing: 0) {
+				ForEach(frets) { fret in
+					switch stringPosition {
+					case .fretNumbers:
+						FretNumberView(fretNumber: fret.number)
+							.frame(height: proxy.size.height / CGFloat(frets.count))
+					default:
+						FretStringView(showFinger: true, stringPosition: stringPosition)
+					}
 				}
 			}
 		}
