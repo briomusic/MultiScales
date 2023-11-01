@@ -12,9 +12,9 @@ struct FretboardView: View {
 		VStack {
 			NumberedFretView()
 			NumberedFretView()
+			NumberedFretView(fretNumber: 3)
 			NumberedFretView()
-			NumberedFretView()
-			NumberedFretView()
+			NumberedFretView(fretNumber: 5)
 			NumberedFretView()
 		}
     }

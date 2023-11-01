@@ -10,12 +10,12 @@ import SwiftUI
 struct FretView: View {
 	var body: some View {
 		HStack {
-			FretStringView(showFret: false, showFinger: true, stringPosition: .first)
-			FretStringView(showFret: true, showFinger: true, stringPosition: .middle)
-			FretStringView(showFret: true, showFinger: true, stringPosition: .middle)
-			FretStringView(showFret: true, showFinger: false, stringPosition: .middle)
-			FretStringView(showFret: true, showFinger: false, stringPosition: .middle)
-			FretStringView(showFret: true, showFinger: true, stringPosition: .last)
+			FretStringView(showFinger: true, stringPosition: .first)
+			FretStringView(showFinger: true, stringPosition: .middle)
+			FretStringView(showFinger: true, stringPosition: .middle)
+			FretStringView(showFinger: false, stringPosition: .middle)
+			FretStringView(showFinger: false, stringPosition: .middle)
+			FretStringView(showFinger: true, stringPosition: .last)
 		}
 	}
 }
@@ -23,6 +23,5 @@ struct FretView: View {
 struct FretView_Previews: PreviewProvider {
     static var previews: some View {
         FretView()
-			.padding(40)
     }
 }

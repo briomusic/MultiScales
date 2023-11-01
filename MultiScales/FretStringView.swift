@@ -14,7 +14,6 @@ enum StringPosition {
 }
 
 struct FretStringView: View {
-	let showFret: Bool
 	let showFinger: Bool
 	let stringPosition: StringPosition
 
@@ -22,10 +21,7 @@ struct FretStringView: View {
 		GeometryReader { proxy in
 			ZStack {
 				stringView(with: proxy)
-//				adaptiveFretView(with: proxy)
-				if showFret {
-					fretView(with: proxy, visible: showFret)
-				}
+				adaptiveFretView(with: proxy)
 				if showFinger {
 					fingerView(with: proxy)
 				}
@@ -37,7 +33,7 @@ struct FretStringView: View {
 	private func stringView(with proxy: GeometryProxy) -> some View {
 		Color.primary
 			.frame(width: 1, height: proxy.size.height + 6)
-			.offset(CGSize(width: proxy.size.width / 2, height: -5))
+			.offset(CGSize(width: 0, height: -5))
 	}
 
 	private func fretView(with proxy: GeometryProxy, visible: Bool) -> some View {
@@ -54,8 +50,30 @@ struct FretStringView: View {
 	
 	private func adaptiveFretView(with proxy: GeometryProxy) -> some View {
 		Color.primary
-			.frame(width: proxy.size.width + 10, height: 3)
-			.offset(CGSize(width: -4, height: proxy.size.height / 2))
+			.frame(width: width(stringPosition: stringPosition, proxy: proxy),
+				   height: 3)
+			.offset(CGSize(width: offset(stringPosition: stringPosition, proxy: proxy),
+						   height: proxy.size.height / 2))
+	}
+	
+	private func offset(stringPosition: StringPosition, proxy: GeometryProxy) -> CGFloat {
+		switch stringPosition {
+		case .first:
+			return proxy.size.width / 2 - 5
+		case .middle:
+			return 0
+		case .last:
+			return -proxy.size.width / 2 + 5
+		}
+	}
+	
+	private func width(stringPosition: StringPosition, proxy: GeometryProxy) -> CGFloat {
+		switch stringPosition {
+		case .first, .last:
+			return proxy.size.width / 2 + 10
+		case .middle:
+			return proxy.size.width + 10
+		}
 	}
 
 	
@@ -71,13 +89,13 @@ struct FretStringView: View {
 		}
 		.frame(width: proxy.size.width,
 			   height: proxy.size.height)
-		.offset(CGSize(width: proxy.size.width / 2, height: 0))
+		.offset(CGSize(width: 0, height: 0))
 	}
 }
 
 
 struct FretStringView_Previews: PreviewProvider {
     static var previews: some View {
-		FretStringView(showFret: true, showFinger: true, stringPosition: .first)
+		FretStringView(showFinger: true, stringPosition: .first)
     }
 }
