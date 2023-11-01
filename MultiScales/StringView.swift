@@ -12,7 +12,7 @@ struct StringView: View {
 	var frets: [Fret]
 
     var body: some View {
-		VStack {
+		VStack(spacing: 0) {
 			ForEach(frets) { fret in
 				switch stringPosition {
 				case .fretNumbers:

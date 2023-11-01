@@ -12,7 +12,7 @@ struct Fret: Identifiable {
 	let number: Int
 	
 	static var frets: [Fret] = {
-		[Fret(id: 0, number: 0),
+		[
 		Fret(id: 1, number: 0),
 		Fret(id: 2, number: 0),
 		Fret(id: 3, number: 3),

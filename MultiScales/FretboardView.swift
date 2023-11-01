@@ -11,16 +11,16 @@ struct FretboardView: View {
 	var frets = Fret.frets
     var body: some View {
 		GeometryReader { proxy in
-			byFrets
-//			byStrings
+//			byFrets
+			byStrings
 		}
     }
 	
 	var byFrets: some View {
-		VStack {
+		VStack(spacing: 0) {
 			SaddleView()
 				.frame(height: 5)
-			VStack {
+			VStack(spacing: 0) {
 				ForEach(frets, content: { fret in
 					NumberedFretView(fretNumber: fret.number)
 				})
@@ -29,9 +29,9 @@ struct FretboardView: View {
 	}
 	
 	var byStrings: some View {
-		HStack {
+		HStack(spacing: 0) {
 			StringView(stringPosition: .fretNumbers, frets: frets)
-			HStack {
+			HStack(spacing: 0) {
 				StringView(stringPosition: .first, frets: frets)
 				StringView(stringPosition: .middle, frets: frets)
 				StringView(stringPosition: .middle, frets: frets)
@@ -46,14 +46,10 @@ struct FretboardView: View {
 struct SaddleView: View {
 	var body: some View {
 		GeometryReader { proxy in
-			HStack {
-				Color.clear
-					.frame(width: proxy.size.width / 17)
-				Color.primary
-					.frame(width: proxy.size.width / 1.27,
-						   height: 5)
-					.offset(CGSize(width: proxy.size.width / 16, height: 0))
-			}
+			Color.primary
+				.frame(width: proxy.size.width / 1.4,
+					   height: 5)
+				.offset(CGSize(width: proxy.size.width / 4.5, height: 0))
 		}
 	}
 }

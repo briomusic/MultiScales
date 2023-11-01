@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FretView: View {
 	var body: some View {
-		HStack {
+		HStack(spacing: 0) {
 			FretStringView(showFinger: true, stringPosition: .first)
 			FretStringView(showFinger: true, stringPosition: .middle)
 			FretStringView(showFinger: true, stringPosition: .middle)

@@ -28,13 +28,14 @@ struct FretStringView: View {
 				}
 			}
 			.frame(width: proxy.size.width, height: proxy.size.height)
+			.padding(0)
 		}
     }
 	
 	private func stringView(with proxy: GeometryProxy) -> some View {
 		Color.primary
-			.frame(width: 1, height: proxy.size.height + 6)
-			.offset(CGSize(width: 0, height: -5))
+			.frame(width: 1, height: proxy.size.height )
+//			.offset(CGSize(width: 0, height: -5))
 	}
 	
 	private func adaptiveFretView(with proxy: GeometryProxy) -> some View {
@@ -48,20 +49,20 @@ struct FretStringView: View {
 	private func offset(stringPosition: StringPosition, proxy: GeometryProxy) -> CGFloat {
 		switch stringPosition {
 		case .first:
-			return proxy.size.width / 2 - 5
+			return proxy.size.width / 4
 		case .middle, .fretNumbers:
 			return 0
 		case .last:
-			return -proxy.size.width / 2 + 5
+			return -proxy.size.width / 4
 		}
 	}
 	
 	private func width(stringPosition: StringPosition, proxy: GeometryProxy) -> CGFloat {
 		switch stringPosition {
 		case .first, .last, .fretNumbers:
-			return proxy.size.width / 2 // + 10
+			return proxy.size.width / 2
 		case .middle:
-			return proxy.size.width // + 10
+			return proxy.size.width
 		}
 	}
 
@@ -86,7 +87,5 @@ struct FretStringView: View {
 struct FretStringView_Previews: PreviewProvider {
     static var previews: some View {
 		FretStringView(showFinger: true, stringPosition: .middle)
-			.background(.orange)
-			.padding()
     }
 }
