@@ -14,6 +14,10 @@
 		0415A0A92AF2C29A002CC941 /* MultiScalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0A82AF2C29A002CC941 /* MultiScalesTests.swift */; };
 		0415A0B32AF2C29A002CC941 /* MultiScalesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0B22AF2C29A002CC941 /* MultiScalesUITests.swift */; };
 		0415A0B52AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0B42AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift */; };
+		0415A0C62AF2D412002CC941 /* FretStringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0C52AF2D412002CC941 /* FretStringView.swift */; };
+		0415A0C82AF2DC0C002CC941 /* FretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0C72AF2DC0C002CC941 /* FretView.swift */; };
+		0415A0CA2AF2DF7D002CC941 /* FretboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0C92AF2DF7D002CC941 /* FretboardView.swift */; };
+		0415A0CC2AF2E91B002CC941 /* NumberedFretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0CB2AF2E91B002CC941 /* NumberedFretView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		0415A0AE2AF2C29A002CC941 /* MultiScalesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiScalesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0415A0B22AF2C29A002CC941 /* MultiScalesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiScalesUITests.swift; sourceTree = "<group>"; };
 		0415A0B42AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiScalesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0415A0C52AF2D412002CC941 /* FretStringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretStringView.swift; sourceTree = "<group>"; };
+		0415A0C72AF2DC0C002CC941 /* FretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretView.swift; sourceTree = "<group>"; };
+		0415A0C92AF2DF7D002CC941 /* FretboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretboardView.swift; sourceTree = "<group>"; };
+		0415A0CB2AF2E91B002CC941 /* NumberedFretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberedFretView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +105,10 @@
 				0415A0972AF2C299002CC941 /* MultiScalesApp.swift */,
 				0415A0992AF2C299002CC941 /* ContentView.swift */,
 				0415A09B2AF2C29A002CC941 /* Assets.xcassets */,
+				0415A0C92AF2DF7D002CC941 /* FretboardView.swift */,
+				0415A0CB2AF2E91B002CC941 /* NumberedFretView.swift */,
+				0415A0C72AF2DC0C002CC941 /* FretView.swift */,
+				0415A0C52AF2D412002CC941 /* FretStringView.swift */,
 				0415A09D2AF2C29A002CC941 /* Preview Content */,
 			);
 			path = MultiScales;
@@ -258,7 +270,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0415A09A2AF2C299002CC941 /* ContentView.swift in Sources */,
+				0415A0C82AF2DC0C002CC941 /* FretView.swift in Sources */,
+				0415A0CC2AF2E91B002CC941 /* NumberedFretView.swift in Sources */,
 				0415A0982AF2C299002CC941 /* MultiScalesApp.swift in Sources */,
+				0415A0C62AF2D412002CC941 /* FretStringView.swift in Sources */,
+				0415A0CA2AF2DF7D002CC941 /* FretboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
