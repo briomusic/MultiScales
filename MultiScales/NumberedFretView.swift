@@ -25,14 +25,13 @@ struct NumberedFretView: View {
 		GeometryReader { proxy in
 			HStack {
 				Text(fretNumberString)
-					.font(.system(size: proxy.size.width / 10, weight: .medium))
-					.frame(width: proxy.size.width / 17)
+					.font(.system(size: proxy.size.width / 14, weight: .medium))
+					.frame(width: proxy.size.width / 12)
 				FretView()
 //					.background(.red)
 			}
 		}
     }
-	
 }
 
 struct NumberedFretView_Previews: PreviewProvider {

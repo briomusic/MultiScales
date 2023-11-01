@@ -8,18 +8,16 @@
 import SwiftUI
 
 struct FretboardView: View {
+	var fretNumbers = [0,0,3,0,5,0,7,0,9,0,0,12]//,0,0,15,0,17]
     var body: some View {
 		GeometryReader { proxy in
 			VStack {
 				SaddleView()
 					.frame(height: 5)
 				VStack {
-					NumberedFretView()
-					NumberedFretView()
-					NumberedFretView(fretNumber: 3)
-					NumberedFretView()
-					NumberedFretView(fretNumber: 5)
-					NumberedFretView()
+					ForEach(fretNumbers, id: \.self) { fretNumber in
+						NumberedFretView(fretNumber: fretNumber)
+					}
 				}
 			}
 		}
