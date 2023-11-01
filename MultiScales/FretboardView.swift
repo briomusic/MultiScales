@@ -8,20 +8,39 @@
 import SwiftUI
 
 struct FretboardView: View {
-	var fretNumbers = [0,0,3,0,5,0,7,0,9,0,0,12]//,0,0,15,0,17]
+	var frets = Fret.frets
     var body: some View {
 		GeometryReader { proxy in
-			VStack {
-				SaddleView()
-					.frame(height: 5)
-				VStack {
-					ForEach(fretNumbers, id: \.self) { fretNumber in
-						NumberedFretView(fretNumber: fretNumber)
-					}
-				}
-			}
+			byFrets
+//			byStrings
 		}
     }
+	
+	var byFrets: some View {
+		VStack {
+			SaddleView()
+				.frame(height: 5)
+			VStack {
+				ForEach(frets, content: { fret in
+					NumberedFretView(fretNumber: fret.number)
+				})
+			}
+		}
+	}
+	
+	var byStrings: some View {
+		HStack {
+			StringView(stringPosition: .fretNumbers, frets: frets)
+			HStack {
+				StringView(stringPosition: .first, frets: frets)
+				StringView(stringPosition: .middle, frets: frets)
+				StringView(stringPosition: .middle, frets: frets)
+				StringView(stringPosition: .middle, frets: frets)
+				StringView(stringPosition: .middle, frets: frets)
+				StringView(stringPosition: .last, frets: frets)
+			}
+		}
+	}
 }
 
 struct SaddleView: View {

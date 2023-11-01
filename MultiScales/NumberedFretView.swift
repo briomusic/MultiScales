@@ -9,24 +9,16 @@ import SwiftUI
 
 struct NumberedFretView: View {
 	var fretNumber: Int
-	var fretNumberString: String {
-		if fretNumber == 0 {
-			return ""
-		} else {
-			return "\(fretNumber)"
-		}
-	}
-	
 	init(fretNumber: Int = 0) {
 		self.fretNumber = fretNumber
 	}
 	
     var body: some View {
 		GeometryReader { proxy in
-			HStack {
-				Text(fretNumberString)
-					.font(.system(size: proxy.size.width / 14, weight: .medium))
-					.frame(width: proxy.size.width / 12)
+			HStack(alignment: .center) {
+				FretNumberView(fretNumber: fretNumber)
+					.frame(width: proxy.size.width / 7)
+//					.background(.green)
 				FretView()
 //					.background(.red)
 			}

@@ -8,6 +8,7 @@
 import SwiftUI
 
 enum StringPosition {
+	case fretNumbers
 	case first
 	case middle
 	case last
@@ -48,7 +49,7 @@ struct FretStringView: View {
 		switch stringPosition {
 		case .first:
 			return proxy.size.width / 2 - 5
-		case .middle:
+		case .middle, .fretNumbers:
 			return 0
 		case .last:
 			return -proxy.size.width / 2 + 5
@@ -57,10 +58,10 @@ struct FretStringView: View {
 	
 	private func width(stringPosition: StringPosition, proxy: GeometryProxy) -> CGFloat {
 		switch stringPosition {
-		case .first, .last:
-			return proxy.size.width / 2 + 10
+		case .first, .last, .fretNumbers:
+			return proxy.size.width / 2 // + 10
 		case .middle:
-			return proxy.size.width + 10
+			return proxy.size.width // + 10
 		}
 	}
 
@@ -84,6 +85,8 @@ struct FretStringView: View {
 
 struct FretStringView_Previews: PreviewProvider {
     static var previews: some View {
-		FretStringView(showFinger: true, stringPosition: .first)
+		FretStringView(showFinger: true, stringPosition: .middle)
+			.background(.orange)
+			.padding()
     }
 }

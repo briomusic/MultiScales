@@ -18,6 +18,9 @@
 		0415A0C82AF2DC0C002CC941 /* FretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0C72AF2DC0C002CC941 /* FretView.swift */; };
 		0415A0CA2AF2DF7D002CC941 /* FretboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0C92AF2DF7D002CC941 /* FretboardView.swift */; };
 		0415A0CC2AF2E91B002CC941 /* NumberedFretView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0CB2AF2E91B002CC941 /* NumberedFretView.swift */; };
+		0415A0CE2AF2FC8B002CC941 /* StringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0CD2AF2FC8B002CC941 /* StringView.swift */; };
+		0415A0D02AF2FEA0002CC941 /* FretNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0CF2AF2FEA0002CC941 /* FretNumberView.swift */; };
+		0415A0D22AF3061A002CC941 /* Fret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0D12AF3061A002CC941 /* Fret.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +55,9 @@
 		0415A0C72AF2DC0C002CC941 /* FretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretView.swift; sourceTree = "<group>"; };
 		0415A0C92AF2DF7D002CC941 /* FretboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretboardView.swift; sourceTree = "<group>"; };
 		0415A0CB2AF2E91B002CC941 /* NumberedFretView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberedFretView.swift; sourceTree = "<group>"; };
+		0415A0CD2AF2FC8B002CC941 /* StringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringView.swift; sourceTree = "<group>"; };
+		0415A0CF2AF2FEA0002CC941 /* FretNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretNumberView.swift; sourceTree = "<group>"; };
+		0415A0D12AF3061A002CC941 /* Fret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fret.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,9 +113,12 @@
 				0415A09B2AF2C29A002CC941 /* Assets.xcassets */,
 				0415A0C92AF2DF7D002CC941 /* FretboardView.swift */,
 				0415A0CB2AF2E91B002CC941 /* NumberedFretView.swift */,
+				0415A0CF2AF2FEA0002CC941 /* FretNumberView.swift */,
 				0415A0C72AF2DC0C002CC941 /* FretView.swift */,
+				0415A0CD2AF2FC8B002CC941 /* StringView.swift */,
 				0415A0C52AF2D412002CC941 /* FretStringView.swift */,
 				0415A09D2AF2C29A002CC941 /* Preview Content */,
+				0415A0D12AF3061A002CC941 /* Fret.swift */,
 			);
 			path = MultiScales;
 			sourceTree = "<group>";
@@ -271,9 +280,12 @@
 			files = (
 				0415A09A2AF2C299002CC941 /* ContentView.swift in Sources */,
 				0415A0C82AF2DC0C002CC941 /* FretView.swift in Sources */,
+				0415A0D22AF3061A002CC941 /* Fret.swift in Sources */,
 				0415A0CC2AF2E91B002CC941 /* NumberedFretView.swift in Sources */,
 				0415A0982AF2C299002CC941 /* MultiScalesApp.swift in Sources */,
 				0415A0C62AF2D412002CC941 /* FretStringView.swift in Sources */,
+				0415A0D02AF2FEA0002CC941 /* FretNumberView.swift in Sources */,
+				0415A0CE2AF2FC8B002CC941 /* StringView.swift in Sources */,
 				0415A0CA2AF2DF7D002CC941 /* FretboardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
