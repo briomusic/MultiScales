@@ -10,12 +10,12 @@ import SwiftUI
 struct FretView: View {
 	var body: some View {
 		HStack {
-			FretStringView(showFret: false, showFinger: true)
-			FretStringView(showFret: true, showFinger: true)
-			FretStringView(showFret: true, showFinger: true)
-			FretStringView(showFret: true, showFinger: false)
-			FretStringView(showFret: true, showFinger: false)
-			FretStringView(showFret: true, showFinger: true)
+			FretStringView(showFret: false, showFinger: true, stringPosition: .first)
+			FretStringView(showFret: true, showFinger: true, stringPosition: .middle)
+			FretStringView(showFret: true, showFinger: true, stringPosition: .middle)
+			FretStringView(showFret: true, showFinger: false, stringPosition: .middle)
+			FretStringView(showFret: true, showFinger: false, stringPosition: .middle)
+			FretStringView(showFret: true, showFinger: true, stringPosition: .last)
 		}
 	}
 }

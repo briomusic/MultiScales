@@ -7,28 +7,37 @@
 
 import SwiftUI
 
+enum StringPosition {
+	case first
+	case middle
+	case last
+}
+
 struct FretStringView: View {
 	let showFret: Bool
 	let showFinger: Bool
+	let stringPosition: StringPosition
 
 	var body: some View {
 		GeometryReader { proxy in
 			ZStack {
 				stringView(with: proxy)
-				fretView(with: proxy, visible: showFret)
+//				adaptiveFretView(with: proxy)
+				if showFret {
+					fretView(with: proxy, visible: showFret)
+				}
 				if showFinger {
 					fingerView(with: proxy)
 				}
 			}
+			.frame(width: proxy.size.width, height: proxy.size.height)
 		}
     }
 	
 	private func stringView(with proxy: GeometryProxy) -> some View {
-		Group {
-			Color.primary
-		}
-		.frame(width: 1, height: proxy.size.height + 6)
-		.offset(CGSize(width: proxy.size.width / 2, height: -5))
+		Color.primary
+			.frame(width: 1, height: proxy.size.height + 6)
+			.offset(CGSize(width: proxy.size.width / 2, height: -5))
 	}
 
 	private func fretView(with proxy: GeometryProxy, visible: Bool) -> some View {
@@ -42,6 +51,13 @@ struct FretStringView: View {
 		.frame(width: proxy.size.width + 10, height: 3)
 		.offset(CGSize(width: -4, height: proxy.size.height / 2))
 	}
+	
+	private func adaptiveFretView(with proxy: GeometryProxy) -> some View {
+		Color.primary
+			.frame(width: proxy.size.width + 10, height: 3)
+			.offset(CGSize(width: -4, height: proxy.size.height / 2))
+	}
+
 	
 	private func fingerView(with proxy: GeometryProxy) -> some View {
 		ZStack {
@@ -62,6 +78,6 @@ struct FretStringView: View {
 
 struct FretStringView_Previews: PreviewProvider {
     static var previews: some View {
-		FretStringView(showFret: true, showFinger: true)
+		FretStringView(showFret: true, showFinger: true, stringPosition: .first)
     }
 }
