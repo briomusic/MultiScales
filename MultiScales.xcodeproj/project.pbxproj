@@ -24,7 +24,7 @@
 		0447670A2AF31AA40092765E /* FretLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044767092AF31AA40092765E /* FretLineView.swift */; };
 		04B268032AF38F8C00338ABC /* NoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B268022AF38F8C00338ABC /* NoteProvider.swift */; };
 		04DE534C2AF38D9D00B4A1DE /* MusicTheory in Frameworks */ = {isa = PBXBuildFile; productRef = 04DE534B2AF38D9D00B4A1DE /* MusicTheory */; };
-		04EB39DD2AF39A4800E3C88C /* Fret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB39DC2AF39A4800E3C88C /* Fret.swift */; };
+		04EB39DD2AF39A4800E3C88C /* FretProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB39DC2AF39A4800E3C88C /* FretProvider.swift */; };
 		04EB39DF2AF39D5D00E3C88C /* Pitch & Semitones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB39DE2AF39D5D00E3C88C /* Pitch & Semitones.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,7 @@
 		0415A0D12AF3061A002CC941 /* FretMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretMarker.swift; sourceTree = "<group>"; };
 		044767092AF31AA40092765E /* FretLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretLineView.swift; sourceTree = "<group>"; };
 		04B268022AF38F8C00338ABC /* NoteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProvider.swift; sourceTree = "<group>"; };
-		04EB39DC2AF39A4800E3C88C /* Fret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fret.swift; sourceTree = "<group>"; };
+		04EB39DC2AF39A4800E3C88C /* FretProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretProvider.swift; sourceTree = "<group>"; };
 		04EB39DE2AF39D5D00E3C88C /* Pitch & Semitones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pitch & Semitones.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,7 +172,7 @@
 			children = (
 				0415A0D12AF3061A002CC941 /* FretMarker.swift */,
 				04B268022AF38F8C00338ABC /* NoteProvider.swift */,
-				04EB39DC2AF39A4800E3C88C /* Fret.swift */,
+				04EB39DC2AF39A4800E3C88C /* FretProvider.swift */,
 				04EB39DE2AF39D5D00E3C88C /* Pitch & Semitones.swift */,
 			);
 			path = Model;
@@ -316,7 +316,7 @@
 			files = (
 				0415A09A2AF2C299002CC941 /* ContentView.swift in Sources */,
 				04B268032AF38F8C00338ABC /* NoteProvider.swift in Sources */,
-				04EB39DD2AF39A4800E3C88C /* Fret.swift in Sources */,
+				04EB39DD2AF39A4800E3C88C /* FretProvider.swift in Sources */,
 				0415A0C82AF2DC0C002CC941 /* FretView.swift in Sources */,
 				0415A0D22AF3061A002CC941 /* FretMarker.swift in Sources */,
 				04EB39DF2AF39D5D00E3C88C /* Pitch & Semitones.swift in Sources */,

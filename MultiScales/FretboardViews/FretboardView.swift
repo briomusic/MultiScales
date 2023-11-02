@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FretboardView: View {
-	var frets = FretMarker.standard
+	var fretMarkers = FretMarker.standard
     var body: some View {
 		GeometryReader { proxy in
 //			byFrets
@@ -21,7 +21,7 @@ struct FretboardView: View {
 			SaddleView()
 				.frame(height: 5)
 			VStack(spacing: 0) {
-				ForEach(frets, content: { fret in
+				ForEach(fretMarkers, content: { fret in
 					NumberedFretView(fretNumber: fret.number)
 				})
 			}
@@ -30,14 +30,14 @@ struct FretboardView: View {
 	
 	var byStrings: some View {
 		HStack(spacing: 0) {
-			StringView(stringPosition: .fretNumbers, frets: frets)
+			StringView(stringPosition: .fretNumbers, fretMarkers: fretMarkers)
 				.frame(width: 30)
-			StringView(stringPosition: .first, frets: frets)
-			StringView(stringPosition: .middle, frets: frets)
-			StringView(stringPosition: .middle, frets: frets)
-			StringView(stringPosition: .middle, frets: frets)
-			StringView(stringPosition: .middle, frets: frets)
-			StringView(stringPosition: .last, frets: frets)
+			StringView(stringPosition: .first, fretMarkers: fretMarkers)
+			StringView(stringPosition: .middle, fretMarkers: fretMarkers)
+			StringView(stringPosition: .middle, fretMarkers: fretMarkers)
+			StringView(stringPosition: .middle, fretMarkers: fretMarkers)
+			StringView(stringPosition: .middle, fretMarkers: fretMarkers)
+			StringView(stringPosition: .last, fretMarkers: fretMarkers)
 		}
 	}
 }

@@ -61,7 +61,7 @@ struct PitchRange {
 	}
 }
 
-struct Fingering {	
+struct FretProvider {	
 	let fretRange: FretRange
 	
 	init(fretRange: FretRange = FretRange()) {
@@ -76,7 +76,7 @@ struct Fingering {
 		return interval.semitones
 	}
 	
-	func frets(for scale: Scale, on string: GuitarString) -> [Int] {
+	func diatonicFrets(for scale: Scale, on string: GuitarString) -> [Int] {
 		let pitchRange = PitchRange(fretRange: fretRange, string: string)
 		let pitches = scale.pitches(octaves: [1,2,3,4])
 		let reachablePitches = pitches.filter {

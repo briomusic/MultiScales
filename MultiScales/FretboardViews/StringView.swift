@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StringView: View {
 	var stringPosition: StringPosition
-	var frets: [FretMarker]
+	var fretMarkers: [FretMarker]
 
     var body: some View {
 		GeometryReader { proxy in
@@ -22,11 +22,11 @@ struct StringView: View {
 
 				VStack(spacing: 0) {
 					//				FretLineView(stringPosition: stringPosition, proxy: proxy)
-					ForEach(frets) { fret in
+					ForEach(fretMarkers) { fretMarker in
 						switch stringPosition {
 						case .fretNumbers:
-							FretNumberView(fretNumber: fret.number)
-								.frame(height: proxy.size.height / CGFloat(frets.count))
+							FretNumberView(fretNumber: fretMarker.number)
+								.frame(height: proxy.size.height / CGFloat(fretMarkers.count))
 						default:
 							FretStringView(showFinger: true, stringPosition: stringPosition)
 						}
@@ -40,7 +40,7 @@ struct StringView: View {
 
 struct StringView_Previews: PreviewProvider {
     static var previews: some View {
-		StringView(stringPosition: .middle, frets: FretMarker.standard)
-		StringView(stringPosition: .fretNumbers, frets: FretMarker.standard)
+		StringView(stringPosition: .middle, fretMarkers: FretMarker.standard)
+		StringView(stringPosition: .fretNumbers, fretMarkers: FretMarker.standard)
     }
 }
