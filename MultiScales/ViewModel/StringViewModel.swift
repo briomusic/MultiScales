@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 class StringViewModel {
 	var string: GuitarString?
 	var fretMarkers: [FretMarker]
-	var activeFrets: [Int]
+	var activeFrets = [Int]()
+	var fretColors = [Color]()
 	var stringPosition: StringPosition {
 		guard let string else {return .fretNumbers}
 		switch string {
@@ -20,12 +22,18 @@ class StringViewModel {
 			return .middle
 		case .e4:
 			return .last
-		}		
+		}
 	}
-
-	init(string: GuitarString?, fretMarkers: [FretMarker], activeFrets: [Int]) {
+	
+//	init(string: GuitarString?, fretMarkers: [FretMarker], activeFrets: [Int]) {
+//		self.string = string
+//		self.fretMarkers = fretMarkers
+//		self.activeFrets = activeFrets
+//	}
+	
+	init(string: GuitarString?, fretMarkers: [FretMarker], fretColors: [Color]) {
 		self.string = string
 		self.fretMarkers = fretMarkers
-		self.activeFrets = activeFrets
+		self.fretColors = fretColors
 	}
 }

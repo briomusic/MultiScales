@@ -32,6 +32,9 @@ final class MultiScalesTests: XCTestCase {
 		
 		let fretsOnAString = fretProvider.diatonicFrets(for: scale1, on: .a2)
 		XCTAssertEqual(fretsOnAString, [0, 3, 5, 7, 10, 12])
+		
+		let fretColors = fretProvider.fretColors(for: scale1, on: .e2)
+		print(fretColors)
     }
 	
 	func testFret() throws {

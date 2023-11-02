@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import MusicTheory
 
 enum GuitarString {
@@ -86,5 +87,18 @@ struct FretProvider {
 			fret(for: pitch, on: string)
 		}
 		return reachableFrets
+	}
+	
+	func fretColors(for scale: Scale, on string: GuitarString) -> [Color] {
+		let reachableFrets = diatonicFrets(for: scale, on: string)
+		var colors = [Color]()
+		for fretIndex in 1...fretRange.highestFret {
+			if reachableFrets.contains(fretIndex) {
+				colors.append(Color.red)
+			} else {
+				colors.append(Color.clear)
+			}
+		}
+		return colors
 	}
 }

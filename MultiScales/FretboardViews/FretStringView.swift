@@ -15,7 +15,8 @@ enum StringPosition {
 }
 
 struct FretStringView: View {
-	let showFinger: Bool
+//	let showFinger: Bool
+	let fretColor: Color
 	let stringPosition: StringPosition
 
 	var body: some View {
@@ -23,8 +24,8 @@ struct FretStringView: View {
 			ZStack {
 				stringView(with: proxy)
 				FretLineView(stringPosition: stringPosition, proxy: proxy)
-				if showFinger {
-					fingerView(with: proxy)
+				if fretColor != .clear {
+					fingerView(with: proxy, color: fretColor)
 				}
 			}
 			.frame(width: proxy.size.width, height: proxy.size.height)
@@ -37,9 +38,9 @@ struct FretStringView: View {
 			.frame(width: 1, height: proxy.size.height )
 	}
 	
-	private func fingerView(with proxy: GeometryProxy) -> some View {
+	private func fingerView(with proxy: GeometryProxy, color: Color) -> some View {
 		ZStack {
-			Color.primary
+			color
 				.clipShape(Circle())
 				.padding(proxy.size.width / 8)
 //			Text("1")
@@ -56,6 +57,6 @@ struct FretStringView: View {
 
 struct FretStringView_Previews: PreviewProvider {
     static var previews: some View {
-		FretStringView(showFinger: true, stringPosition: .middle)
+		FretStringView(fretColor: .red, stringPosition: .middle)
     }
 }
