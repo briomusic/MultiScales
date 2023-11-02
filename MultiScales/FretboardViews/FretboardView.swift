@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct FretboardView: View {
-	var frets = Fret.frets
+	var frets = FretMarker.standard
     var body: some View {
 		GeometryReader { proxy in
 //			byFrets
