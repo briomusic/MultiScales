@@ -55,6 +55,10 @@ struct PitchRange {
 	var minPitch: Pitch {
 		string.basePitch + fretRange.lowestFret
 	}
+	
+	func isInRange(pitch: Pitch) -> Bool {
+		pitch >= minPitch && pitch <= maxPitch
+	}
 }
 
 struct Fingering {	
@@ -66,10 +70,21 @@ struct Fingering {
 	
 	func fret(for pitch: Pitch, on string: GuitarString) -> Int? {
 		let pitchRange = PitchRange(fretRange: fretRange, string: string)
-		guard pitch >= pitchRange.minPitch,
-			  pitch <= pitchRange.maxPitch else { return nil }
+		guard pitchRange.isInRange(pitch: pitch) else { return nil }
 		
 		let interval = string.basePitch - pitch
 		return interval.semitones
+	}
+	
+	func frets(for scale: Scale, on string: GuitarString) -> [Int] {
+		let pitchRange = PitchRange(fretRange: fretRange, string: string)
+		let pitches = scale.pitches(octaves: [1,2,3,4])
+		let reachablePitches = pitches.filter {
+			pitchRange.isInRange(pitch: $0)
+		}
+		let reachableFrets = reachablePitches.compactMap { pitch in
+			fret(for: pitch, on: string)
+		}
+		return reachableFrets
 	}
 }

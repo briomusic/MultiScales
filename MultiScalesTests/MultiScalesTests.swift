@@ -21,11 +21,17 @@ final class MultiScalesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
+    func testAPentatonicOnEAndAString() throws {
 		let scale1 = Scale(type: .pentatonicMinor, key: Key(type: .a))
 		
 		print("keys:", scale1.keys)
-		print("pitches:", scale1.pitches(octaves: [1,2,3]))
+		print("pitches:", scale1.pitches(octaves: [1,2,3,4]))
+		
+		let fretsOnEString = fingering.frets(for: scale1, on: .e2)
+		XCTAssertEqual(fretsOnEString, [0, 3, 5, 8, 10, 12])
+		
+		let fretsOnAString = fingering.frets(for: scale1, on: .a2)
+		XCTAssertEqual(fretsOnAString, [0, 3, 5, 7, 10, 12])
     }
 	
 	func testFret() throws {
@@ -44,22 +50,15 @@ final class MultiScalesTests: XCTestCase {
 	}
 		
 	func testPitchRange() throws {
-		var eStringFret0To12 = PitchRange(fretRange: FretRange(), string: .e2)
+		let eStringFret0To12 = PitchRange(fretRange: FretRange(), string: .e2)
 		
 		print(eStringFret0To12.minPitch)
 		print(eStringFret0To12.maxPitch)
-		
-		var aStringFret5To9 = PitchRange(fretRange: FretRange(lowestFret: 5, highestFret: 9), string: .a2)
+				
+		let aStringFret5To9 = PitchRange(fretRange: FretRange(lowestFret: 5, highestFret: 9), string: .a2)
 		
 		print(aStringFret5To9.minPitch)
 		print(aStringFret5To9.maxPitch)
 	}
 	
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
