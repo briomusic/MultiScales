@@ -8,27 +8,26 @@
 import SwiftUI
 
 struct StringView: View {
-	var stringPosition: StringPosition
-	var fretMarkers: [FretMarker]
-
+	let viewModel: StringViewModel
+	
     var body: some View {
 		GeometryReader { proxy in
 			VStack(spacing: 0) {
-				if case .fretNumbers = stringPosition {
+				if case .fretNumbers = viewModel.stringPosition {
 					EmptyView()
 				} else {
-					FretLineView(stringPosition: stringPosition, proxy: proxy)
+					FretLineView(stringPosition: viewModel.stringPosition, proxy: proxy)
 				}
 
 				VStack(spacing: 0) {
 					//				FretLineView(stringPosition: stringPosition, proxy: proxy)
-					ForEach(fretMarkers) { fretMarker in
-						switch stringPosition {
+					ForEach(viewModel.fretMarkers) { fretMarker in
+						switch viewModel.stringPosition {
 						case .fretNumbers:
 							FretNumberView(fretNumber: fretMarker.number)
-								.frame(height: proxy.size.height / CGFloat(fretMarkers.count))
+								.frame(height: proxy.size.height / CGFloat(viewModel.fretMarkers.count))
 						default:
-							FretStringView(showFinger: true, stringPosition: stringPosition)
+							FretStringView(showFinger: true, stringPosition: viewModel.stringPosition)
 						}
 					}
 				}
@@ -40,7 +39,7 @@ struct StringView: View {
 
 struct StringView_Previews: PreviewProvider {
     static var previews: some View {
-		StringView(stringPosition: .middle, fretMarkers: FretMarker.standard)
-		StringView(stringPosition: .fretNumbers, fretMarkers: FretMarker.standard)
+		StringView(viewModel: StringViewModel(string: .d3, fretMarkers: FretMarker.standard, activeFrets: []))
+		StringView(viewModel: StringViewModel(string: nil, fretMarkers: FretMarker.standard, activeFrets: []))
     }
 }

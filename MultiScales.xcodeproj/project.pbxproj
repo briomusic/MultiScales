@@ -22,10 +22,10 @@
 		0415A0D02AF2FEA0002CC941 /* FretNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0CF2AF2FEA0002CC941 /* FretNumberView.swift */; };
 		0415A0D22AF3061A002CC941 /* FretMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0D12AF3061A002CC941 /* FretMarker.swift */; };
 		0447670A2AF31AA40092765E /* FretLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044767092AF31AA40092765E /* FretLineView.swift */; };
-		04B268032AF38F8C00338ABC /* NoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B268022AF38F8C00338ABC /* NoteProvider.swift */; };
+		047EC0632AF3B5F900FC7055 /* FretboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EC0622AF3B5F900FC7055 /* FretboardViewModel.swift */; };
+		047EC0662AF3B81300FC7055 /* StringViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047EC0652AF3B81300FC7055 /* StringViewModel.swift */; };
 		04DE534C2AF38D9D00B4A1DE /* MusicTheory in Frameworks */ = {isa = PBXBuildFile; productRef = 04DE534B2AF38D9D00B4A1DE /* MusicTheory */; };
 		04EB39DD2AF39A4800E3C88C /* FretProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB39DC2AF39A4800E3C88C /* FretProvider.swift */; };
-		04EB39DF2AF39D5D00E3C88C /* Pitch & Semitones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB39DE2AF39D5D00E3C88C /* Pitch & Semitones.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +64,9 @@
 		0415A0CF2AF2FEA0002CC941 /* FretNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretNumberView.swift; sourceTree = "<group>"; };
 		0415A0D12AF3061A002CC941 /* FretMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretMarker.swift; sourceTree = "<group>"; };
 		044767092AF31AA40092765E /* FretLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretLineView.swift; sourceTree = "<group>"; };
-		04B268022AF38F8C00338ABC /* NoteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProvider.swift; sourceTree = "<group>"; };
+		047EC0622AF3B5F900FC7055 /* FretboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretboardViewModel.swift; sourceTree = "<group>"; };
+		047EC0652AF3B81300FC7055 /* StringViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringViewModel.swift; sourceTree = "<group>"; };
 		04EB39DC2AF39A4800E3C88C /* FretProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretProvider.swift; sourceTree = "<group>"; };
-		04EB39DE2AF39D5D00E3C88C /* Pitch & Semitones.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pitch & Semitones.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +121,7 @@
 				0415A0972AF2C299002CC941 /* MultiScalesApp.swift */,
 				0415A0992AF2C299002CC941 /* ContentView.swift */,
 				04B268012AF38EFB00338ABC /* Model */,
+				047EC0642AF3B64900FC7055 /* ViewModel */,
 				04B268002AF38EC900338ABC /* FretboardViews */,
 				0415A09B2AF2C29A002CC941 /* Assets.xcassets */,
 				0415A09D2AF2C29A002CC941 /* Preview Content */,
@@ -153,6 +154,15 @@
 			path = MultiScalesUITests;
 			sourceTree = "<group>";
 		};
+		047EC0642AF3B64900FC7055 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				047EC0622AF3B5F900FC7055 /* FretboardViewModel.swift */,
+				047EC0652AF3B81300FC7055 /* StringViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		04B268002AF38EC900338ABC /* FretboardViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,9 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				0415A0D12AF3061A002CC941 /* FretMarker.swift */,
-				04B268022AF38F8C00338ABC /* NoteProvider.swift */,
 				04EB39DC2AF39A4800E3C88C /* FretProvider.swift */,
-				04EB39DE2AF39D5D00E3C88C /* Pitch & Semitones.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,14 +322,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				047EC0632AF3B5F900FC7055 /* FretboardViewModel.swift in Sources */,
 				0415A09A2AF2C299002CC941 /* ContentView.swift in Sources */,
-				04B268032AF38F8C00338ABC /* NoteProvider.swift in Sources */,
 				04EB39DD2AF39A4800E3C88C /* FretProvider.swift in Sources */,
 				0415A0C82AF2DC0C002CC941 /* FretView.swift in Sources */,
 				0415A0D22AF3061A002CC941 /* FretMarker.swift in Sources */,
-				04EB39DF2AF39D5D00E3C88C /* Pitch & Semitones.swift in Sources */,
 				0415A0CC2AF2E91B002CC941 /* NumberedFretView.swift in Sources */,
 				0415A0982AF2C299002CC941 /* MultiScalesApp.swift in Sources */,
+				047EC0662AF3B81300FC7055 /* StringViewModel.swift in Sources */,
 				0415A0C62AF2D412002CC941 /* FretStringView.swift in Sources */,
 				0415A0D02AF2FEA0002CC941 /* FretNumberView.swift in Sources */,
 				0447670A2AF31AA40092765E /* FretLineView.swift in Sources */,
