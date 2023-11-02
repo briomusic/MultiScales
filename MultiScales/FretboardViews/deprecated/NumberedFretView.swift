@@ -18,9 +18,7 @@ struct NumberedFretView: View {
 			HStack(alignment: .center) {
 				FretNumberView(fretNumber: fretNumber)
 					.frame(width: proxy.size.width / 7)
-//					.background(.green)
 				FretView()
-//					.background(.red)
 			}
 		}
     }

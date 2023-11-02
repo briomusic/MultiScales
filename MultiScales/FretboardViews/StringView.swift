@@ -20,16 +20,8 @@ struct StringView: View {
 				}
 
 				VStack(spacing: 0) {
-					//				FretLineView(stringPosition: stringPosition, proxy: proxy)
 					ForEach(viewModel.fretMarkers) { fretMarker in
 						self.fretStringView(viewModel: viewModel, fretMarker: fretMarker, proxy: proxy)
-//						switch viewModel.stringPosition {
-//						case .fretNumbers:
-//							return FretNumberView(fretNumber: fretMarker.number)
-//								.frame(height: proxy.size.height / CGFloat(viewModel.fretMarkers.count))
-//						default:
-//							return FretStringView(fretColor: viewModel.fretColors[fretMarker.id], stringPosition: viewModel.stringPosition)
-//						}
 					}
 				}
 			}
@@ -37,7 +29,6 @@ struct StringView: View {
     }
 	
 	func fretStringView(viewModel: StringViewModel, fretMarker: FretMarker, proxy: GeometryProxy) -> some View {
-		//  fretColor: viewModel.fretColors[fretMarker.id]
 		ZStack {
 			switch viewModel.stringPosition {
 			case .fretNumbers:
@@ -47,7 +38,7 @@ struct StringView: View {
 				if fretMarker.id > viewModel.fretColors.count {
 					EmptyView()
 				} else {
-					FretStringView(fretColor: viewModel.fretColors[fretMarker.id - 1], stringPosition: viewModel.stringPosition)
+					FretStringView(fretColor: viewModel.fretColors[fretMarker.id], stringPosition: viewModel.stringPosition)
 				}
 			}
 		}

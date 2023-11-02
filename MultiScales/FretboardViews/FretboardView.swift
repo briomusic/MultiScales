@@ -17,18 +17,6 @@ struct FretboardView: View {
 		}
     }
 	
-	var byFrets: some View {
-		VStack(spacing: 0) {
-			SaddleView()
-				.frame(height: 5)
-			VStack(spacing: 0) {
-				ForEach(viewModel.fretMarkers, content: { fret in
-					NumberedFretView(fretNumber: fret.number)
-				})
-			}
-		}
-	}
-	
 	var byStrings: some View {
 		HStack(spacing: 0) {
 			StringView(viewModel: viewModel.stringViewModel(for: nil))
@@ -39,6 +27,19 @@ struct FretboardView: View {
 			StringView(viewModel: viewModel.stringViewModel(for: .g3))
 			StringView(viewModel: viewModel.stringViewModel(for: .b3))
 			StringView(viewModel: viewModel.stringViewModel(for: .e4))
+		}
+	}
+	
+	// deprecated
+	var byFrets: some View {
+		VStack(spacing: 0) {
+			SaddleView()
+				.frame(height: 5)
+			VStack(spacing: 0) {
+				ForEach(viewModel.fretMarkers, content: { fret in
+					NumberedFretView(fretNumber: fret.number)
+				})
+			}
 		}
 	}
 }

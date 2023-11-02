@@ -163,16 +163,24 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		047EC0672AF3D35300FC7055 /* deprecated */ = {
+			isa = PBXGroup;
+			children = (
+				0415A0CB2AF2E91B002CC941 /* NumberedFretView.swift */,
+				0415A0CF2AF2FEA0002CC941 /* FretNumberView.swift */,
+				0415A0C72AF2DC0C002CC941 /* FretView.swift */,
+			);
+			path = deprecated;
+			sourceTree = "<group>";
+		};
 		04B268002AF38EC900338ABC /* FretboardViews */ = {
 			isa = PBXGroup;
 			children = (
 				0415A0C92AF2DF7D002CC941 /* FretboardView.swift */,
-				0415A0CB2AF2E91B002CC941 /* NumberedFretView.swift */,
-				0415A0CF2AF2FEA0002CC941 /* FretNumberView.swift */,
-				0415A0C72AF2DC0C002CC941 /* FretView.swift */,
 				0415A0CD2AF2FC8B002CC941 /* StringView.swift */,
 				0415A0C52AF2D412002CC941 /* FretStringView.swift */,
 				044767092AF31AA40092765E /* FretLineView.swift */,
+				047EC0672AF3D35300FC7055 /* deprecated */,
 			);
 			path = FretboardViews;
 			sourceTree = "<group>";
