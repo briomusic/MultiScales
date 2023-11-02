@@ -22,7 +22,7 @@ struct FretStringView: View {
 		GeometryReader { proxy in
 			ZStack {
 				stringView(with: proxy)
-				adaptiveFretView(with: proxy)
+				FretLineView(stringPosition: stringPosition, proxy: proxy)
 				if showFinger {
 					fingerView(with: proxy)
 				}
@@ -36,35 +36,6 @@ struct FretStringView: View {
 		Color.primary
 			.frame(width: 1, height: proxy.size.height )
 	}
-	
-	private func adaptiveFretView(with proxy: GeometryProxy) -> some View {
-		Color.primary
-			.frame(width: width(stringPosition: stringPosition, proxy: proxy),
-				   height: 3)
-			.offset(CGSize(width: offset(stringPosition: stringPosition, proxy: proxy),
-						   height: proxy.size.height / 2))
-	}
-	
-	private func offset(stringPosition: StringPosition, proxy: GeometryProxy) -> CGFloat {
-		switch stringPosition {
-		case .first:
-			return proxy.size.width / 4
-		case .middle, .fretNumbers:
-			return 0
-		case .last:
-			return -proxy.size.width / 4
-		}
-	}
-	
-	private func width(stringPosition: StringPosition, proxy: GeometryProxy) -> CGFloat {
-		switch stringPosition {
-		case .first, .last, .fretNumbers:
-			return proxy.size.width / 2
-		case .middle:
-			return proxy.size.width
-		}
-	}
-
 	
 	private func fingerView(with proxy: GeometryProxy) -> some View {
 		ZStack {

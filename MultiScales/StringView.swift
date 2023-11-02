@@ -14,13 +14,22 @@ struct StringView: View {
     var body: some View {
 		GeometryReader { proxy in
 			VStack(spacing: 0) {
-				ForEach(frets) { fret in
-					switch stringPosition {
-					case .fretNumbers:
-						FretNumberView(fretNumber: fret.number)
-							.frame(height: proxy.size.height / CGFloat(frets.count))
-					default:
-						FretStringView(showFinger: true, stringPosition: stringPosition)
+				if case .fretNumbers = stringPosition {
+					EmptyView()
+				} else {
+					FretLineView(stringPosition: stringPosition, proxy: proxy)
+				}
+
+				VStack(spacing: 0) {
+					//				FretLineView(stringPosition: stringPosition, proxy: proxy)
+					ForEach(frets) { fret in
+						switch stringPosition {
+						case .fretNumbers:
+							FretNumberView(fretNumber: fret.number)
+								.frame(height: proxy.size.height / CGFloat(frets.count))
+						default:
+							FretStringView(showFinger: true, stringPosition: stringPosition)
+						}
 					}
 				}
 			}

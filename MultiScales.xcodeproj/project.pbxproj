@@ -21,6 +21,8 @@
 		0415A0CE2AF2FC8B002CC941 /* StringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0CD2AF2FC8B002CC941 /* StringView.swift */; };
 		0415A0D02AF2FEA0002CC941 /* FretNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0CF2AF2FEA0002CC941 /* FretNumberView.swift */; };
 		0415A0D22AF3061A002CC941 /* Fret.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0D12AF3061A002CC941 /* Fret.swift */; };
+		0447670A2AF31AA40092765E /* FretLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044767092AF31AA40092765E /* FretLineView.swift */; };
+		04DE534C2AF38D9D00B4A1DE /* MusicTheory in Frameworks */ = {isa = PBXBuildFile; productRef = 04DE534B2AF38D9D00B4A1DE /* MusicTheory */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,7 @@
 		0415A0CD2AF2FC8B002CC941 /* StringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringView.swift; sourceTree = "<group>"; };
 		0415A0CF2AF2FEA0002CC941 /* FretNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretNumberView.swift; sourceTree = "<group>"; };
 		0415A0D12AF3061A002CC941 /* Fret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fret.swift; sourceTree = "<group>"; };
+		044767092AF31AA40092765E /* FretLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretLineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04DE534C2AF38D9D00B4A1DE /* MusicTheory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +123,7 @@
 				0415A0C52AF2D412002CC941 /* FretStringView.swift */,
 				0415A09D2AF2C29A002CC941 /* Preview Content */,
 				0415A0D12AF3061A002CC941 /* Fret.swift */,
+				044767092AF31AA40092765E /* FretLineView.swift */,
 			);
 			path = MultiScales;
 			sourceTree = "<group>";
@@ -164,6 +169,9 @@
 			dependencies = (
 			);
 			name = MultiScales;
+			packageProductDependencies = (
+				04DE534B2AF38D9D00B4A1DE /* MusicTheory */,
+			);
 			productName = MultiScales;
 			productReference = 0415A0942AF2C299002CC941 /* MultiScales.app */;
 			productType = "com.apple.product-type.application";
@@ -236,6 +244,9 @@
 				Base,
 			);
 			mainGroup = 0415A08B2AF2C299002CC941;
+			packageReferences = (
+				04DE534A2AF38D9D00B4A1DE /* XCRemoteSwiftPackageReference "MusicTheory" */,
+			);
 			productRefGroup = 0415A0952AF2C299002CC941 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -285,6 +296,7 @@
 				0415A0982AF2C299002CC941 /* MultiScalesApp.swift in Sources */,
 				0415A0C62AF2D412002CC941 /* FretStringView.swift in Sources */,
 				0415A0D02AF2FEA0002CC941 /* FretNumberView.swift in Sources */,
+				0447670A2AF31AA40092765E /* FretLineView.swift in Sources */,
 				0415A0CE2AF2FC8B002CC941 /* StringView.swift in Sources */,
 				0415A0CA2AF2DF7D002CC941 /* FretboardView.swift in Sources */,
 			);
@@ -611,6 +623,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04DE534A2AF38D9D00B4A1DE /* XCRemoteSwiftPackageReference "MusicTheory" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cemolcay/MusicTheory.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04DE534B2AF38D9D00B4A1DE /* MusicTheory */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04DE534A2AF38D9D00B4A1DE /* XCRemoteSwiftPackageReference "MusicTheory" */;
+			productName = MusicTheory;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0415A08C2AF2C299002CC941 /* Project object */;
 }
