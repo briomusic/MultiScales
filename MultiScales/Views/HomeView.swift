@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Fretboard
 
 struct HomeView: View {
 	@StateObject var viewModel: HomeViewModel

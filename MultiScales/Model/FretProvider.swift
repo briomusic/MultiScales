@@ -8,8 +8,10 @@
 import Foundation
 import SwiftUI
 import MusicTheory
+import Fretboard
 
-extension Fretboard.String {	
+
+extension FretboardConfiguration.String {	
 	var basePitch: Pitch {
 		switch self {
 		case .e2:
@@ -40,7 +42,7 @@ struct FretRange {
 
 struct PitchRange {
 	let fretRange: FretRange
-	let string: Fretboard.String
+	let string: FretboardConfiguration.String
 
 	var maxPitch: Pitch {
 		string.basePitch + fretRange.highestFret
@@ -62,7 +64,7 @@ struct FretProvider {
 		self.fretRange = fretRange
 	}
 	
-	func fret(for pitch: Pitch, on string: Fretboard.String) -> Int? {
+	func fret(for pitch: Pitch, on string: FretboardConfiguration.String) -> Int? {
 		let pitchRange = PitchRange(fretRange: fretRange, string: string)
 		guard pitchRange.isInRange(pitch: pitch) else { return nil }
 		
@@ -70,7 +72,7 @@ struct FretProvider {
 		return interval.semitones
 	}
 	
-	func diatonicFrets(for scale: Scale, on string: Fretboard.String) -> [Int] {
+	func diatonicFrets(for scale: Scale, on string: FretboardConfiguration.String) -> [Int] {
 		let pitchRange = PitchRange(fretRange: fretRange, string: string)
 		let pitches = scale.pitches(octaves: [1,2,3,4,5])
 		let reachablePitches = pitches.filter {
@@ -82,7 +84,7 @@ struct FretProvider {
 		return reachableFrets
 	}
 	
-	func fretColors(for tintedScale: TintedScale, on string: Fretboard.String) -> [Color] {
+	func fretColors(for tintedScale: TintedScale, on string: FretboardConfiguration.String) -> [Color] {
 		let reachableFrets = diatonicFrets(for: tintedScale.scale, on: string)
 		var colors = [Color]()
 		for fretIndex in 1...fretRange.highestFret {
@@ -95,7 +97,7 @@ struct FretProvider {
 		return colors
 	}
 	
-	func fretColors(for tintedScales: [TintedScale], on string: Fretboard.String) -> [[Color]] {
+	func fretColors(for tintedScales: [TintedScale], on string: FretboardConfiguration.String) -> [[Color]] {
 		let colorsByScale = tintedScales.map {
 			self.fretColors(for: $0, on: string)
 		}
@@ -111,11 +113,11 @@ struct FretProvider {
 		return nestedArray
 	}
 	
-	func fretboard(for tintedScales: [TintedScale]) -> Fretboard {
-		var fingerings = Dictionary<Fretboard.String, [[Color]]>()
-		for guitarString in Fretboard.String.allCases {
+	func fretboard(for tintedScales: [TintedScale]) -> FretboardConfiguration {
+		var fingerings = Dictionary<FretboardConfiguration.String, [[Color]]>()
+		for guitarString in FretboardConfiguration.String.allCases {
 			fingerings[guitarString] = fretColors(for: tintedScales, on: guitarString)
 		}
-		return Fretboard(fingerings: fingerings)
+		return FretboardConfiguration(fingerings: fingerings)
 	}
 }

@@ -8,6 +8,7 @@
 import XCTest
 import SwiftUI
 @testable import MultiScales
+@testable import Fretboard
 import MusicTheory
 
 final class MultiScalesTests: XCTestCase {
@@ -92,8 +93,7 @@ final class MultiScalesTests: XCTestCase {
 									   tintColor: .blue)
 		
 		let fretboard = fretProvider.fretboard(for: [tintedScale1, tintedScale2])
-//		let testColors: [[Color]] = [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]]
-		let testFingerings: Dictionary<Fretboard.String, [[Color]]> = [
+		let testFingerings: Dictionary<FretboardConfiguration.String, [[Color]]> = [
 			.a2: [[.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear], [.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue]],
 			.e4: [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]],
 			.g3: [[.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear], [.clear, .blue], [.clear, .clear], [.red, .blue]],
@@ -102,7 +102,6 @@ final class MultiScalesTests: XCTestCase {
 			.e2: [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]]
 		]
 		
-//		XCTAssertEqual(fretboard.fingerings[.e2], testColors)
 		XCTAssertEqual(fretboard.fingerings, testFingerings)
 	}
 }
