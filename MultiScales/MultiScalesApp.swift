@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct MultiScalesApp: App {
+	@StateObject var scaleProvider = ScaleProvider()
+
     var body: some Scene {
         WindowGroup {
-            ScaleEditor()
+			HomeView(viewModel: HomeViewModel(scaleProvider: scaleProvider))
         }
     }
 }

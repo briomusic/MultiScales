@@ -13,10 +13,12 @@ struct StringView: View {
     var body: some View {
 		GeometryReader { proxy in
 			VStack(spacing: 0) {
-				if case .fretNumbers = viewModel.stringPosition {
+				if case .fretNumbers = viewModel.stringPosition
+				{
 					EmptyView()
 				} else {
-					FretLineView(stringPosition: viewModel.stringPosition, proxy: proxy)
+					FretLineView(lineWidth: 4, stringPosition: viewModel.stringPosition, proxy: proxy)
+						.offset(CGSize(width: 0, height: -proxy.size.height / 2))
 				}
 
 				VStack(spacing: 0) {

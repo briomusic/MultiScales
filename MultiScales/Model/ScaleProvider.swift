@@ -9,12 +9,23 @@ import Foundation
 import MusicTheory
 import SwiftUI
 
-struct TintedScale: Identifiable {
-	let scale: Scale
-	let tintColor: Color
+class ScaleProvider: ObservableObject {
+	@Published var scales = TintedScale.standard
+}
+
+struct TintedScale: Identifiable, Equatable {
+	var scale: Scale
+	var tintColor: Color
+	var isActive: Bool
 	let id = UUID()
 	
-	static let standard = [
+	init(scale: Scale, tintColor: Color, active: Bool = true) {
+		self.scale = scale
+		self.tintColor = tintColor
+		self.isActive = active
+	}
+	
+	static var standard = [
 		TintedScale(scale: Scale(type: .pentatonicMinor, key: Key(type: .e)),
 								  tintColor: .purple),
 		TintedScale(scale: Scale(type: .pentatonicMinor, key: Key(type: .a)),
@@ -22,22 +33,4 @@ struct TintedScale: Identifiable {
 		TintedScale(scale: Scale(type: .pentatonicMinor, key: Key(type: .d)),
 								  tintColor: .blue)
 		]
-}
-
-extension Scale {
-	var shortDescription: String {
-"""
-  \(key)
-  \(type)
-"""
-	}
-	
-	/*
-	 \(key)
-	 \(type)
-	 */
-}
-
-class ScaleProvider: ObservableObject {
-	@Published var scales = TintedScale.standard
 }

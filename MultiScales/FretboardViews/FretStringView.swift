@@ -15,6 +15,7 @@ enum StringPosition {
 }
 
 struct FretStringView: View {
+	let fingerScale = CGFloat(1.2)
 	let fretColors: [Color]
 	let stringPosition: StringPosition
 
@@ -42,9 +43,8 @@ struct FretStringView: View {
 				PieView(start: wedge.start, end: wedge.end, color: wedge.color)
 			}			
 		}
-		.frame(width: proxy.size.width,
-			   height: proxy.size.height)
-		.offset(CGSize(width: 0, height: 0))
+		.frame(width: proxy.size.width / fingerScale,
+			   height: proxy.size.height / fingerScale)
 	}
 	
 	private func wedges(colors: [Color]) -> [Wedge] {
@@ -68,8 +68,6 @@ struct Wedge {
 	let start: Double
 	let end: Double
 	let color: Color
-	
-	
 }
 
 

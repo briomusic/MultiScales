@@ -93,7 +93,7 @@ struct FretProvider {
 		let reachableFrets = diatonicFrets(for: tintedScale.scale, on: string)
 		var colors = [Color]()
 		for fretIndex in 1...fretRange.highestFret {
-			if reachableFrets.contains(fretIndex) {
+			if reachableFrets.contains(fretIndex) && tintedScale.isActive {
 				colors.append(tintedScale.tintColor)
 			} else {
 				colors.append(Color.clear)
