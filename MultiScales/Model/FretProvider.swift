@@ -79,7 +79,7 @@ struct FretProvider {
 	
 	func diatonicFrets(for scale: Scale, on string: GuitarString) -> [Int] {
 		let pitchRange = PitchRange(fretRange: fretRange, string: string)
-		let pitches = scale.pitches(octaves: [1,2,3,4])
+		let pitches = scale.pitches(octaves: [1,2,3,4,5])
 		let reachablePitches = pitches.filter {
 			pitchRange.isInRange(pitch: $0)
 		}
