@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import SwiftUI
 @testable import MultiScales
 import MusicTheory
 
@@ -23,7 +24,7 @@ final class MultiScalesTests: XCTestCase {
 
     func testAPentatonicOnEAndAString() throws {
 		let scale1 = Scale(type: .pentatonicMinor, key: Key(type: .a))
-		
+		let tintedScale = TintedScale(scale: scale1, tintColor: .red)
 		print("keys:", scale1.keys)
 		print("pitches:", scale1.pitches(octaves: [1,2,3,4]))
 		
@@ -33,7 +34,7 @@ final class MultiScalesTests: XCTestCase {
 		let fretsOnAString = fretProvider.diatonicFrets(for: scale1, on: .a2)
 		XCTAssertEqual(fretsOnAString, [0, 3, 5, 7, 10, 12])
 		
-		let fretColors = fretProvider.fretColors(for: scale1, on: .e2)
+		let fretColors = fretProvider.fretColors(for: tintedScale, on: .e2)
 		print(fretColors)
     }
 	
@@ -64,4 +65,25 @@ final class MultiScalesTests: XCTestCase {
 		print(aStringFret5To9.maxPitch)
 	}
 	
+	func testColorsForOneScale() throws {
+		let tintedScale = TintedScale(scale: Scale(type: .pentatonicMinor, key: Key(type: .a)),
+									  tintColor: .red)
+		
+		let colors = fretProvider.fretColors(for: tintedScale, on: .e2)
+		let testColors: [Color] = [.clear, .clear, .red, .clear, .red, .clear, .clear, .red, .clear, .red, .clear, .red]
+		XCTAssertEqual(colors, testColors)
+	}
+	
+	func testColorsForTwoScales() throws {
+		let tintedScale1 = TintedScale(scale: Scale(type: .pentatonicMinor, key: Key(type: .a)),
+									   tintColor: .red)
+		let tintedScale2 = TintedScale(scale: Scale(type: .pentatonicMinor, key: Key(type: .d)),
+									   tintColor: .blue)
+		
+		let colors = fretProvider.fretColors(for: [tintedScale1, tintedScale2], on: .e2)
+		let testColors: [[Color]] = [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]]
+		XCTAssertEqual(colors, testColors)
+	}
+
+
 }

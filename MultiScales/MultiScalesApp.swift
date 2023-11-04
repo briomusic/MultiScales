@@ -11,7 +11,7 @@ import SwiftUI
 struct MultiScalesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ScaleEditor()
         }
     }
 }

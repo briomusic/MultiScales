@@ -89,16 +89,33 @@ struct FretProvider {
 		return reachableFrets
 	}
 	
-	func fretColors(for scale: Scale, on string: GuitarString) -> [Color] {
-		let reachableFrets = diatonicFrets(for: scale, on: string)
+	func fretColors(for tintedScale: TintedScale, on string: GuitarString) -> [Color] {
+		let reachableFrets = diatonicFrets(for: tintedScale.scale, on: string)
 		var colors = [Color]()
 		for fretIndex in 1...fretRange.highestFret {
 			if reachableFrets.contains(fretIndex) {
-				colors.append(Color.red)
+				colors.append(tintedScale.tintColor)
 			} else {
 				colors.append(Color.clear)
 			}
 		}
 		return colors
 	}
+	
+	func fretColors(for tintedScales: [TintedScale], on string: GuitarString) -> [[Color]] {
+		let colorsByScale = tintedScales.map {
+			self.fretColors(for: $0, on: string)
+		}
+		guard let count = colorsByScale.first?.count else {return [[]]}
+		var nestedArray = [[Color]]()
+		for index in 0..<count {
+			var colorsForOneIndex = [Color]()
+			for colorsForOneScale in colorsByScale {
+				colorsForOneIndex.append(colorsForOneScale[index])
+			}
+			nestedArray.append(colorsForOneIndex)
+		}
+		return nestedArray
+	}
+
 }

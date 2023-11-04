@@ -12,7 +12,7 @@ class StringViewModel {
 	var string: GuitarString?
 	var fretMarkers: [FretMarker]
 	var activeFrets = [Int]()
-	var fretColors = [Color]()
+	var fretColors = [[Color]]()
 	var stringPosition: StringPosition {
 		guard let string else {return .fretNumbers}
 		switch string {
@@ -31,7 +31,7 @@ class StringViewModel {
 //		self.activeFrets = activeFrets
 //	}
 	
-	init(string: GuitarString?, fretMarkers: [FretMarker], fretColors: [Color]) {
+	init(string: GuitarString?, fretMarkers: [FretMarker], fretColors: [[Color]]) {
 		self.string = string
 		self.fretMarkers = fretMarkers
 		self.fretColors = fretColors

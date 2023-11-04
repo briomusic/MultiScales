@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct FretboardView: View {
-	let viewModel = FretboardViewModel()
+	let viewModel: FretboardViewModel
     var body: some View {
 		GeometryReader { proxy in
 //			byFrets
@@ -57,6 +57,6 @@ struct SaddleView: View {
 
 struct FretboardView_Previews: PreviewProvider {
     static var previews: some View {
-        FretboardView()
+		FretboardView(viewModel: FretboardViewModel(tintedScales: TintedScale.standard))
     }
 }

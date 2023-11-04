@@ -15,8 +15,7 @@ enum StringPosition {
 }
 
 struct FretStringView: View {
-//	let showFinger: Bool
-	let fretColor: Color
+	let fretColors: [Color]
 	let stringPosition: StringPosition
 
 	var body: some View {
@@ -24,9 +23,7 @@ struct FretStringView: View {
 			ZStack {
 				stringView(with: proxy)
 				FretLineView(stringPosition: stringPosition, proxy: proxy)
-				if fretColor != .clear {
-					fingerView(with: proxy, color: fretColor)
-				}
+				fingerView(with: proxy, colors: fretColors)
 			}
 			.frame(width: proxy.size.width, height: proxy.size.height)
 			.padding(0)
@@ -38,25 +35,46 @@ struct FretStringView: View {
 			.frame(width: 1, height: proxy.size.height )
 	}
 	
-	private func fingerView(with proxy: GeometryProxy, color: Color) -> some View {
+	private func fingerView(with proxy: GeometryProxy, colors: [Color]) -> some View {
 		ZStack {
-			color
-				.clipShape(Circle())
-				.padding(proxy.size.width / 8)
-//			Text("1")
-//				.font(.system(size: proxy.size.width / 2, weight: .bold))
-//				.foregroundColor(.white)
-			
+			let wedges = wedges(colors: colors)
+			ForEach(wedges, id:\.start) { wedge in
+				PieView(start: wedge.start, end: wedge.end, color: wedge.color)
+			}			
 		}
 		.frame(width: proxy.size.width,
 			   height: proxy.size.height)
 		.offset(CGSize(width: 0, height: 0))
 	}
+	
+	private func wedges(colors: [Color]) -> [Wedge] {
+		let validColors = colors.filter {
+			$0 != .clear
+		}
+		var wedges = [Wedge]()
+		let wedgeCount = validColors.count
+		if wedgeCount > 0 {
+			let wedgeWidth = Double(360) / Double(wedgeCount)
+			wedges = validColors.enumerated().map { index, color in
+				Wedge(start: wedgeWidth * Double(index),
+					  end: wedgeWidth * Double(index + 1), color: color)
+			}
+		}
+		return wedges
+	}
+}
+
+struct Wedge {
+	let start: Double
+	let end: Double
+	let color: Color
+	
+	
 }
 
 
 struct FretStringView_Previews: PreviewProvider {
     static var previews: some View {
-		FretStringView(fretColor: .red, stringPosition: .middle)
+		FretStringView(fretColors: [.red, .blue, .yellow], stringPosition: .middle)
     }
 }

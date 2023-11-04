@@ -38,7 +38,7 @@ struct StringView: View {
 				if fretMarker.id > viewModel.fretColors.count {
 					EmptyView()
 				} else {
-					FretStringView(fretColor: viewModel.fretColors[fretMarker.id], stringPosition: viewModel.stringPosition)
+					FretStringView(fretColors: viewModel.fretColors[fretMarker.id], stringPosition: viewModel.stringPosition)
 				}
 			}
 		}
@@ -48,7 +48,7 @@ struct StringView: View {
 
 struct StringView_Previews: PreviewProvider {
     static var previews: some View {
-		StringView(viewModel: StringViewModel(string: .d3, fretMarkers: FretMarker.standard, fretColors: [.black,.black,.black,.black,.black,.black,.black,.black,.black,.black,.black,.black,.black,.black,.black]))
-		StringView(viewModel: StringViewModel(string: nil, fretMarkers: FretMarker.standard, fretColors: [.black,.black,.black,.black,.black,.black,.black,.black,.black,.black,.black,.black,.black,.black,.black]))
+		StringView(viewModel: StringViewModel(string: .d3, fretMarkers: FretMarker.standard, fretColors: [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]]))
+		StringView(viewModel: StringViewModel(string: nil, fretMarkers: FretMarker.standard, fretColors: [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]]))
     }
 }
