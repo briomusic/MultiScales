@@ -1,10 +1,3 @@
-//
-//  Pie.swift
-//  Memorize
-//
-//  Created by Brio Taliaferro on 31.10.22.
-//
-
 import SwiftUI
 
 struct PieView: View {

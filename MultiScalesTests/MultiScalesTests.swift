@@ -84,6 +84,25 @@ final class MultiScalesTests: XCTestCase {
 		let testColors: [[Color]] = [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]]
 		XCTAssertEqual(colors, testColors)
 	}
-
-
+	
+	func testFretboardForTwoScales() throws {
+		let tintedScale1 = TintedScale(scale: Scale(type: .pentatonicMinor, key: Key(type: .a)),
+									   tintColor: .red)
+		let tintedScale2 = TintedScale(scale: Scale(type: .pentatonicMinor, key: Key(type: .d)),
+									   tintColor: .blue)
+		
+		let fretboard = fretProvider.fretboard(for: [tintedScale1, tintedScale2])
+//		let testColors: [[Color]] = [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]]
+		let testFingerings: Dictionary<Fretboard.String, [[Color]]> = [
+			.a2: [[.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear], [.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue]],
+			.e4: [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]],
+			.g3: [[.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear], [.clear, .blue], [.clear, .clear], [.red, .blue]],
+			.d3: [[.clear, .clear], [.red, .clear], [.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue]],
+			.b3: [[.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear], [.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear]],
+			.e2: [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]]
+		]
+		
+//		XCTAssertEqual(fretboard.fingerings[.e2], testColors)
+		XCTAssertEqual(fretboard.fingerings, testFingerings)
+	}
 }

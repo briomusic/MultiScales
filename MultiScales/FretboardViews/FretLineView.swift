@@ -1,10 +1,3 @@
-//
-//  FretLineView.swift
-//  MultiScales
-//
-//  Created by Brio Taliaferro on 02.11.23.
-//
-
 import SwiftUI
 
 struct FretLineView: View {

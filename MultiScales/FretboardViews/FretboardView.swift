@@ -1,12 +1,4 @@
-//
-//  FretboardView.swift
-//  MultiScales
-//
-//  Created by Brio Taliaferro on 01.11.23.
-//
-
 import SwiftUI
-
 
 struct FretboardView: View {
 	let viewModel: FretboardViewModel
@@ -57,6 +49,6 @@ struct SaddleView: View {
 
 struct FretboardView_Previews: PreviewProvider {
     static var previews: some View {
-		FretboardView(viewModel: FretboardViewModel(tintedScales: TintedScale.standard))
+		FretboardView(viewModel: FretboardViewModel(fretboard: Fretboard.mock))
     }
 }

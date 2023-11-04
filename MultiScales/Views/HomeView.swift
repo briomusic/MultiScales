@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
 	@StateObject var viewModel: HomeViewModel
 	@State var isShowingPopup: Bool = false
-
+	
     var body: some View {
 		VStack {
 			HStack {
@@ -18,7 +18,7 @@ struct HomeView: View {
 					ScaleButtonView(scale: $scale)
 				}
 			}
-			FretboardView(viewModel: FretboardViewModel(tintedScales: viewModel.scaleProvider.scales))
+			FretboardView(viewModel: viewModel.fretboardViewModel())
 				.padding()
 				.frame(maxWidth: 400)
 		}
@@ -28,6 +28,7 @@ struct HomeView: View {
 struct ScaleButtonView: View {
 	@Binding var scale: TintedScale
 	@State var isShowingPopup: Bool = false
+	
 	var body: some View {
 		Button {
 			isShowingPopup = true
@@ -57,6 +58,5 @@ struct ContentView_Previews: PreviewProvider {
 		HomeView(viewModel: HomeViewModel(scaleProvider: ScaleProvider()))
 			.previewDevice(PreviewDevice(rawValue: "iPad Air"))
 			.previewDisplayName("iPad Air")
-
     }
 }

@@ -1,10 +1,3 @@
-//
-//  FretStringView.swift
-//  MultiScales
-//
-//  Created by Brio Taliaferro on 01.11.23.
-//
-
 import SwiftUI
 
 enum StringPosition {

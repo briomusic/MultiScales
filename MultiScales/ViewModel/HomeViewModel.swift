@@ -14,4 +14,10 @@ class HomeViewModel: ObservableObject {
 	internal init(scaleProvider: ScaleProvider) {
 		self.scaleProvider = scaleProvider
 	}
+	
+	func fretboardViewModel() -> FretboardViewModel {
+		let fretProvider = FretProvider()
+		let fretboard = fretProvider.fretboard(for: scaleProvider.scales)
+		return FretboardViewModel(fretboard: fretboard)
+	}
 }

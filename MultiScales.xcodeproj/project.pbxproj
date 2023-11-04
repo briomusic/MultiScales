@@ -21,6 +21,7 @@
 		0415A0CE2AF2FC8B002CC941 /* StringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0CD2AF2FC8B002CC941 /* StringView.swift */; };
 		0415A0D02AF2FEA0002CC941 /* FretNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0CF2AF2FEA0002CC941 /* FretNumberView.swift */; };
 		0415A0D22AF3061A002CC941 /* FretMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0D12AF3061A002CC941 /* FretMarker.swift */; };
+		0426978D2AF6D6E100847EBD /* Fretboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0426978C2AF6D6E100847EBD /* Fretboard.swift */; };
 		0447670A2AF31AA40092765E /* FretLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044767092AF31AA40092765E /* FretLineView.swift */; };
 		044A50D92AF4FD59007179D9 /* ScaleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A50D82AF4FD59007179D9 /* ScaleProvider.swift */; };
 		046AA2F92AF518EC004AB58E /* ScaleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA2F82AF518EC004AB58E /* ScaleEditorView.swift */; };
@@ -68,6 +69,7 @@
 		0415A0CD2AF2FC8B002CC941 /* StringView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringView.swift; sourceTree = "<group>"; };
 		0415A0CF2AF2FEA0002CC941 /* FretNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretNumberView.swift; sourceTree = "<group>"; };
 		0415A0D12AF3061A002CC941 /* FretMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretMarker.swift; sourceTree = "<group>"; };
+		0426978C2AF6D6E100847EBD /* Fretboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fretboard.swift; sourceTree = "<group>"; };
 		044767092AF31AA40092765E /* FretLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretLineView.swift; sourceTree = "<group>"; };
 		044A50D82AF4FD59007179D9 /* ScaleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleProvider.swift; sourceTree = "<group>"; };
 		046AA2F82AF518EC004AB58E /* ScaleEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleEditorView.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				0415A0D12AF3061A002CC941 /* FretMarker.swift */,
 				04EB39DC2AF39A4800E3C88C /* FretProvider.swift */,
 				044A50D82AF4FD59007179D9 /* ScaleProvider.swift */,
+				0426978C2AF6D6E100847EBD /* Fretboard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				046AA2F92AF518EC004AB58E /* ScaleEditorView.swift in Sources */,
 				04EEF96A2AF5450200627548 /* ScaleEditorViewModel.swift in Sources */,
 				0415A0D02AF2FEA0002CC941 /* FretNumberView.swift in Sources */,
+				0426978D2AF6D6E100847EBD /* Fretboard.swift in Sources */,
 				0447670A2AF31AA40092765E /* FretLineView.swift in Sources */,
 				0415A0CE2AF2FC8B002CC941 /* StringView.swift in Sources */,
 				0415A0CA2AF2DF7D002CC941 /* FretboardView.swift in Sources */,

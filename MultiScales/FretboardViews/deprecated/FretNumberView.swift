@@ -1,10 +1,3 @@
-//
-//  FretNumber.swift
-//  MultiScales
-//
-//  Created by Brio Taliaferro on 01.11.23.
-//
-
 import SwiftUI
 
 struct FretNumberView: View {
