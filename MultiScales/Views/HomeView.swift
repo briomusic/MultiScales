@@ -20,6 +20,7 @@ struct HomeView: View {
 			}
 			FretboardView(viewModel: FretboardViewModel(tintedScales: viewModel.scaleProvider.scales))
 				.padding()
+				.frame(maxWidth: 400)
 		}
     }
 }
@@ -50,5 +51,12 @@ struct ScaleButtonView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(viewModel: HomeViewModel(scaleProvider: ScaleProvider()))
+			.previewDevice(PreviewDevice(rawValue: "iPhone 14"))
+			.previewDisplayName("iPhone 14")
+		
+		HomeView(viewModel: HomeViewModel(scaleProvider: ScaleProvider()))
+			.previewDevice(PreviewDevice(rawValue: "iPad Air"))
+			.previewDisplayName("iPad Air")
+
     }
 }
