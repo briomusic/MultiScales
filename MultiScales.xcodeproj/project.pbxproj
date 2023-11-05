@@ -54,6 +54,7 @@
 		044A50D82AF4FD59007179D9 /* ScaleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleProvider.swift; sourceTree = "<group>"; };
 		046AA2F82AF518EC004AB58E /* ScaleEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleEditorView.swift; sourceTree = "<group>"; };
 		04A03C1F2AF583FE00242143 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		04BA03002AF7C251007DBF37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		04EB39DC2AF39A4800E3C88C /* FretProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FretProvider.swift; sourceTree = "<group>"; };
 		04EEF9692AF5450200627548 /* ScaleEditorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleEditorViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +110,7 @@
 		0415A0962AF2C299002CC941 /* MultiScales */ = {
 			isa = PBXGroup;
 			children = (
+				04BA03002AF7C251007DBF37 /* Info.plist */,
 				0426978E2AF6E48300847EBD /* Packages */,
 				0415A0972AF2C299002CC941 /* MultiScalesApp.swift */,
 				04B268012AF38EFB00338ABC /* Model */,
@@ -492,6 +494,7 @@
 				DEVELOPMENT_TEAM = 66AST54HNQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MultiScales/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Multi Scales";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -523,6 +526,7 @@
 				DEVELOPMENT_TEAM = 66AST54HNQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MultiScales/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Multi Scales";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
