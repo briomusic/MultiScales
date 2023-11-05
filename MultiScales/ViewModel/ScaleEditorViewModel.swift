@@ -8,10 +8,10 @@
 import Foundation
 import SwiftUI
 
-struct ScaleEditorViewModel {
+class ScaleEditorViewModel {
 	@Binding var scale: TintedScale
 	
-//	init(scale: TintedScale) {
-//		self.scale = scale
-//	}
+	init(scale: Binding<TintedScale>) {
+		self._scale = scale
+	}
 }
