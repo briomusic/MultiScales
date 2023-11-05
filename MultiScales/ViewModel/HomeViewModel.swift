@@ -10,7 +10,7 @@ import SwiftUI
 import Fretboard
 
 class HomeViewModel: ObservableObject {
-	@ObservedObject var scaleProvider = ScaleProvider()
+	@Published var scaleProvider: ScaleProvider
 
 	internal init(scaleProvider: ScaleProvider) {
 		self.scaleProvider = scaleProvider
