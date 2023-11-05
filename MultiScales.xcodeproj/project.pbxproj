@@ -14,6 +14,7 @@
 		0415A0A92AF2C29A002CC941 /* MultiScalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0A82AF2C29A002CC941 /* MultiScalesTests.swift */; };
 		0415A0B32AF2C29A002CC941 /* MultiScalesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0B22AF2C29A002CC941 /* MultiScalesUITests.swift */; };
 		0415A0B52AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0B42AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift */; };
+		0430C8DF2AF7FA8E00FF7976 /* AStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430C8DE2AF7FA8E00FF7976 /* AStack.swift */; };
 		044A50D92AF4FD59007179D9 /* ScaleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A50D82AF4FD59007179D9 /* ScaleProvider.swift */; };
 		046681352AF77C9A00E8D1E9 /* Fretboard in Frameworks */ = {isa = PBXBuildFile; productRef = 046681342AF77C9A00E8D1E9 /* Fretboard */; };
 		046AA2F92AF518EC004AB58E /* ScaleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA2F82AF518EC004AB58E /* ScaleEditorView.swift */; };
@@ -51,6 +52,7 @@
 		0415A0AE2AF2C29A002CC941 /* MultiScalesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiScalesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0415A0B22AF2C29A002CC941 /* MultiScalesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiScalesUITests.swift; sourceTree = "<group>"; };
 		0415A0B42AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiScalesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		0430C8DE2AF7FA8E00FF7976 /* AStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStack.swift; sourceTree = "<group>"; };
 		044A50D82AF4FD59007179D9 /* ScaleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleProvider.swift; sourceTree = "<group>"; };
 		046AA2F82AF518EC004AB58E /* ScaleEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleEditorView.swift; sourceTree = "<group>"; };
 		04A03C1F2AF583FE00242143 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				0415A0992AF2C299002CC941 /* HomeView.swift */,
 				046AA2F82AF518EC004AB58E /* ScaleEditorView.swift */,
+				0430C8DE2AF7FA8E00FF7976 /* AStack.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				044A50D92AF4FD59007179D9 /* ScaleProvider.swift in Sources */,
 				046AA2F92AF518EC004AB58E /* ScaleEditorView.swift in Sources */,
 				04EEF96A2AF5450200627548 /* ScaleEditorViewModel.swift in Sources */,
+				0430C8DF2AF7FA8E00FF7976 /* AStack.swift in Sources */,
 				04A03C202AF583FE00242143 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -500,8 +504,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -532,8 +537,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,10 +1,3 @@
-//
-//  ScaleEditor.swift
-//  MultiScales
-//
-//  Created by Brio Taliaferro on 03.11.23.
-//
-
 import SwiftUI
 import MusicTheory
 
@@ -28,6 +21,9 @@ struct ScaleEditorView: View {
 	
     var body: some View {
 		List {
+			Text("Scale Editor")
+				.font(.title)
+				.frame(maxWidth: .infinity, alignment: .center)
 			Picker("FlatSharp", selection: $flatSharp) {
 				ForEach(FlatSharp.allCases, id:\.self) { flatSharp in
 					Text(flatSharp.rawValue)
