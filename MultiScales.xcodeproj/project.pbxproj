@@ -14,8 +14,8 @@
 		0415A0A92AF2C29A002CC941 /* MultiScalesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0A82AF2C29A002CC941 /* MultiScalesTests.swift */; };
 		0415A0B32AF2C29A002CC941 /* MultiScalesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0B22AF2C29A002CC941 /* MultiScalesUITests.swift */; };
 		0415A0B52AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0B42AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift */; };
-		042697922AF6E74900847EBD /* Fretboard in Frameworks */ = {isa = PBXBuildFile; productRef = 042697912AF6E74900847EBD /* Fretboard */; };
 		044A50D92AF4FD59007179D9 /* ScaleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A50D82AF4FD59007179D9 /* ScaleProvider.swift */; };
+		046681352AF77C9A00E8D1E9 /* Fretboard in Frameworks */ = {isa = PBXBuildFile; productRef = 046681342AF77C9A00E8D1E9 /* Fretboard */; };
 		046AA2F92AF518EC004AB58E /* ScaleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA2F82AF518EC004AB58E /* ScaleEditorView.swift */; };
 		04A03C202AF583FE00242143 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A03C1F2AF583FE00242143 /* HomeViewModel.swift */; };
 		04DE534C2AF38D9D00B4A1DE /* MusicTheory in Frameworks */ = {isa = PBXBuildFile; productRef = 04DE534B2AF38D9D00B4A1DE /* MusicTheory */; };
@@ -51,7 +51,6 @@
 		0415A0AE2AF2C29A002CC941 /* MultiScalesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MultiScalesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0415A0B22AF2C29A002CC941 /* MultiScalesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiScalesUITests.swift; sourceTree = "<group>"; };
 		0415A0B42AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiScalesUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		0426978F2AF6E54F00847EBD /* Fretboard */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Fretboard; path = ../../../Fretboard; sourceTree = "<group>"; };
 		044A50D82AF4FD59007179D9 /* ScaleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleProvider.swift; sourceTree = "<group>"; };
 		046AA2F82AF518EC004AB58E /* ScaleEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleEditorView.swift; sourceTree = "<group>"; };
 		04A03C1F2AF583FE00242143 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -64,7 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				042697922AF6E74900847EBD /* Fretboard in Frameworks */,
+				046681352AF77C9A00E8D1E9 /* Fretboard in Frameworks */,
 				04DE534C2AF38D9D00B4A1DE /* MusicTheory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -149,7 +148,6 @@
 		0426978E2AF6E48300847EBD /* Packages */ = {
 			isa = PBXGroup;
 			children = (
-				0426978F2AF6E54F00847EBD /* Fretboard */,
 			);
 			path = Packages;
 			sourceTree = "<group>";
@@ -206,7 +204,7 @@
 			name = MultiScales;
 			packageProductDependencies = (
 				04DE534B2AF38D9D00B4A1DE /* MusicTheory */,
-				042697912AF6E74900847EBD /* Fretboard */,
+				046681342AF77C9A00E8D1E9 /* Fretboard */,
 			);
 			productName = MultiScales;
 			productReference = 0415A0942AF2C299002CC941 /* MultiScales.app */;
@@ -282,6 +280,7 @@
 			mainGroup = 0415A08B2AF2C299002CC941;
 			packageReferences = (
 				04DE534A2AF38D9D00B4A1DE /* XCRemoteSwiftPackageReference "MusicTheory" */,
+				046681332AF77C9A00E8D1E9 /* XCRemoteSwiftPackageReference "Fretboard" */,
 			);
 			productRefGroup = 0415A0952AF2C299002CC941 /* Products */;
 			projectDirPath = "";
@@ -656,6 +655,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		046681332AF77C9A00E8D1E9 /* XCRemoteSwiftPackageReference "Fretboard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:briomusic/Fretboard.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		04DE534A2AF38D9D00B4A1DE /* XCRemoteSwiftPackageReference "MusicTheory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cemolcay/MusicTheory.git";
@@ -667,8 +674,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		042697912AF6E74900847EBD /* Fretboard */ = {
+		046681342AF77C9A00E8D1E9 /* Fretboard */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = 046681332AF77C9A00E8D1E9 /* XCRemoteSwiftPackageReference "Fretboard" */;
 			productName = Fretboard;
 		};
 		04DE534B2AF38D9D00B4A1DE /* MusicTheory */ = {

@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "fretboard",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:briomusic/Fretboard.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "ddb25385f9e909559cfe248dafd867c8785d098e"
+      }
+    },
+    {
       "identity" : "musictheory",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/cemolcay/MusicTheory.git",
