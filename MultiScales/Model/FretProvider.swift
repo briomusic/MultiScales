@@ -34,7 +34,7 @@ struct FretRange {
 	let lowestFret: Int
 	let highestFret: Int
 		
-	init(lowestFret: Int = 0, highestFret: Int = 12) {
+	init(lowestFret: Int = 0, highestFret: Int = 18) {
 		self.lowestFret = lowestFret
 		self.highestFret = highestFret
 	}
@@ -97,24 +97,24 @@ struct FretProvider {
 		return colors
 	}
 	
-	func fretColors(for tintedScales: [TintedScale], on string: FretboardConfiguration.String) -> [[Color]] {
+	func fretColors(for tintedScales: [TintedScale], on string: FretboardConfiguration.String) -> [FingeringColors] {
 		let colorsByScale = tintedScales.map {
 			self.fretColors(for: $0, on: string)
 		}
-		guard let count = colorsByScale.first?.count else {return [[]]}
-		var nestedArray = [[Color]]()
+		guard let count = colorsByScale.first?.count else {return [FingeringColors(colors:[])]}
+		var nestedArray = [FingeringColors]()
 		for index in 0..<count {
 			var colorsForOneIndex = [Color]()
 			for colorsForOneScale in colorsByScale {
 				colorsForOneIndex.append(colorsForOneScale[index])
 			}
-			nestedArray.append(colorsForOneIndex)
+			nestedArray.append(FingeringColors(colors: colorsForOneIndex))
 		}
 		return nestedArray
 	}
 	
 	func fretboard(for tintedScales: [TintedScale]) -> FretboardConfiguration {
-		var fingerings = Dictionary<FretboardConfiguration.String, [[Color]]>()
+		var fingerings = Dictionary<FretboardConfiguration.String, [FingeringColors]>()
 		for guitarString in FretboardConfiguration.String.allCases {
 			fingerings[guitarString] = fretColors(for: tintedScales, on: guitarString)
 		}
