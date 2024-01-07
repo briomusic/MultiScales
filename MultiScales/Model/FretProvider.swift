@@ -122,6 +122,6 @@ struct FretProvider {
 		for guitarString in FretboardConfiguration.String.allCases {
 			fingerings[guitarString] = fretColors(for: tintedScales, on: guitarString)
 		}
-		return FretboardConfiguration(fretCount: fretRange.fretCount, fingerings: fingerings)
+		return FretboardConfiguration(fingerings: fingerings)
 	}
 }
