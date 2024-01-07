@@ -18,7 +18,7 @@ class HomeViewModel: ObservableObject {
 	
 	func fretboardViewModel() -> FretboardViewModel {
 		let fretProvider = FretProvider()
-		let fretboard = fretProvider.fretboard(for: scaleProvider.scales)
-		return FretboardViewModel(fretboard: fretboard)
+		let fretboardConfiguration = fretProvider.fretboardConfiguration(for: scaleProvider.scales)
+		return FretboardViewModel(fretboard: fretboardConfiguration)
 	}
 }

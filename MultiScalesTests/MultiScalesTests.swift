@@ -92,7 +92,7 @@ final class MultiScalesTests: XCTestCase {
 		let tintedScale2 = TintedScale(scale: Scale(type: .pentatonicMinor, key: Key(type: .d)),
 									   tintColor: .blue)
 		
-		let fretboard = fretProvider.fretboard(for: [tintedScale1, tintedScale2])
+		let fretboard = fretProvider.fretboardConfiguration(for: [tintedScale1, tintedScale2])
 		let testFingerings: Dictionary<FretboardConfiguration.String, [[Color]]> = [
 			.a2: [[.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear], [.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue]],
 			.e4: [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]],

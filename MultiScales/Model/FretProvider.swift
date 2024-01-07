@@ -33,6 +33,10 @@ extension FretboardConfiguration.String {
 struct FretRange {
 	let lowestFret: Int
 	let highestFret: Int
+	
+	var fretCount: Int {
+		highestFret - lowestFret
+	}
 		
 	init(lowestFret: Int = 0, highestFret: Int = 18) {
 		self.lowestFret = lowestFret
@@ -113,11 +117,11 @@ struct FretProvider {
 		return nestedArray
 	}
 	
-	func fretboard(for tintedScales: [TintedScale]) -> FretboardConfiguration {
+	func fretboardConfiguration(for tintedScales: [TintedScale]) -> FretboardConfiguration {
 		var fingerings = Dictionary<FretboardConfiguration.String, [FingeringColors]>()
 		for guitarString in FretboardConfiguration.String.allCases {
 			fingerings[guitarString] = fretColors(for: tintedScales, on: guitarString)
 		}
-		return FretboardConfiguration(fingerings: fingerings)
+		return FretboardConfiguration(fretCount: fretRange.fretCount, fingerings: fingerings)
 	}
 }
