@@ -38,7 +38,7 @@ struct FretRange {
 		highestFret - lowestFret
 	}
 		
-	init(lowestFret: Int = 0, highestFret: Int = 18) {
+	init(lowestFret: Int = 0, highestFret: Int = 12) {
 		self.lowestFret = lowestFret
 		self.highestFret = highestFret
 	}
