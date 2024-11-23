@@ -38,7 +38,7 @@ struct FretRange {
 		highestFret - lowestFret
 	}
 		
-	init(lowestFret: Int = 0, highestFret: Int = 12) {
+	init(lowestFret: Int = 0, highestFret: Int = 18) {
 		self.lowestFret = lowestFret
 		self.highestFret = highestFret
 	}
@@ -122,6 +122,6 @@ struct FretProvider {
 		for guitarString in FretboardConfiguration.String.allCases {
 			fingerings[guitarString] = fretColors(for: tintedScales, on: guitarString)
 		}
-		return FretboardConfiguration(fingerings: fingerings)
+		return FretboardConfiguration(fretCount: fretRange.fretCount, fingerings: fingerings)
 	}
 }
