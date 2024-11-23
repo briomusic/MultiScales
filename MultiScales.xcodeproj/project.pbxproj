@@ -17,9 +17,9 @@
 		0430C8DF2AF7FA8E00FF7976 /* AStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430C8DE2AF7FA8E00FF7976 /* AStack.swift */; };
 		044A50D92AF4FD59007179D9 /* ScaleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A50D82AF4FD59007179D9 /* ScaleProvider.swift */; };
 		046AA2F92AF518EC004AB58E /* ScaleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA2F82AF518EC004AB58E /* ScaleEditorView.swift */; };
-		049AC7ED2B4C57F100AD3309 /* Fretboard in Frameworks */ = {isa = PBXBuildFile; productRef = 049AC7EC2B4C57F100AD3309 /* Fretboard */; };
 		04A03C202AF583FE00242143 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A03C1F2AF583FE00242143 /* HomeViewModel.swift */; };
-		04DE534C2AF38D9D00B4A1DE /* MusicTheory in Frameworks */ = {isa = PBXBuildFile; productRef = 04DE534B2AF38D9D00B4A1DE /* MusicTheory */; };
+		04D490132CF1ECDC00CC8989 /* Fretboard in Frameworks */ = {isa = PBXBuildFile; productRef = 04D490122CF1ECDC00CC8989 /* Fretboard */; };
+		04D490162CF1ECFB00CC8989 /* MusicTheory in Frameworks */ = {isa = PBXBuildFile; productRef = 04D490152CF1ECFB00CC8989 /* MusicTheory */; };
 		04EB39DD2AF39A4800E3C88C /* FretProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EB39DC2AF39A4800E3C88C /* FretProvider.swift */; };
 		04EEF96A2AF5450200627548 /* ScaleEditorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04EEF9692AF5450200627548 /* ScaleEditorViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -66,8 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				049AC7ED2B4C57F100AD3309 /* Fretboard in Frameworks */,
-				04DE534C2AF38D9D00B4A1DE /* MusicTheory in Frameworks */,
+				04D490132CF1ECDC00CC8989 /* Fretboard in Frameworks */,
+				04D490162CF1ECFB00CC8989 /* MusicTheory in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +208,8 @@
 			);
 			name = MultiScales;
 			packageProductDependencies = (
-				04DE534B2AF38D9D00B4A1DE /* MusicTheory */,
-				049AC7EC2B4C57F100AD3309 /* Fretboard */,
+				04D490122CF1ECDC00CC8989 /* Fretboard */,
+				04D490152CF1ECFB00CC8989 /* MusicTheory */,
 			);
 			productName = MultiScales;
 			productReference = 0415A0942AF2C299002CC941 /* MultiScales.app */;
@@ -284,8 +284,8 @@
 			);
 			mainGroup = 0415A08B2AF2C299002CC941;
 			packageReferences = (
-				04DE534A2AF38D9D00B4A1DE /* XCRemoteSwiftPackageReference "MusicTheory" */,
-				049AC7EB2B4C57F100AD3309 /* XCRemoteSwiftPackageReference "Fretboard" */,
+				04D490112CF1ECDC00CC8989 /* XCRemoteSwiftPackageReference "Fretboard" */,
+				04D490142CF1ECFB00CC8989 /* XCRemoteSwiftPackageReference "MusicTheory" */,
 			);
 			productRefGroup = 0415A0952AF2C299002CC941 /* Products */;
 			projectDirPath = "";
@@ -675,7 +675,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		049AC7EB2B4C57F100AD3309 /* XCRemoteSwiftPackageReference "Fretboard" */ = {
+		04D490112CF1ECDC00CC8989 /* XCRemoteSwiftPackageReference "Fretboard" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/briomusic/Fretboard.git";
 			requirement = {
@@ -683,25 +683,25 @@
 				kind = branch;
 			};
 		};
-		04DE534A2AF38D9D00B4A1DE /* XCRemoteSwiftPackageReference "MusicTheory" */ = {
+		04D490142CF1ECFB00CC8989 /* XCRemoteSwiftPackageReference "MusicTheory" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/cemolcay/MusicTheory.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
+				minimumVersion = 1.6.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		049AC7EC2B4C57F100AD3309 /* Fretboard */ = {
+		04D490122CF1ECDC00CC8989 /* Fretboard */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 049AC7EB2B4C57F100AD3309 /* XCRemoteSwiftPackageReference "Fretboard" */;
+			package = 04D490112CF1ECDC00CC8989 /* XCRemoteSwiftPackageReference "Fretboard" */;
 			productName = Fretboard;
 		};
-		04DE534B2AF38D9D00B4A1DE /* MusicTheory */ = {
+		04D490152CF1ECFB00CC8989 /* MusicTheory */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 04DE534A2AF38D9D00B4A1DE /* XCRemoteSwiftPackageReference "MusicTheory" */;
+			package = 04D490142CF1ECFB00CC8989 /* XCRemoteSwiftPackageReference "MusicTheory" */;
 			productName = MusicTheory;
 		};
 /* End XCSwiftPackageProductDependency section */

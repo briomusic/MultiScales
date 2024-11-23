@@ -1,9 +1,10 @@
 {
+  "originHash" : "50a6e0000cb935e60105f3424bcca054cea16e8990494a0b69d55f19c35cbc62",
   "pins" : [
     {
       "identity" : "fretboard",
       "kind" : "remoteSourceControl",
-      "location" : "git@github.com:briomusic/Fretboard.git",
+      "location" : "https://github.com/briomusic/Fretboard.git",
       "state" : {
         "branch" : "main",
         "revision" : "54ab906739a9896ca9f040a49cca3332b8036580"
@@ -14,10 +15,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/cemolcay/MusicTheory.git",
       "state" : {
-        "revision" : "0457d035d0e4e7af83992bfffc31b094ba7a788f",
-        "version" : "1.4.0"
+        "revision" : "ce9ecb92eb5c6b47583c58ce4de20ce6fe9aae5d",
+        "version" : "1.6.0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
