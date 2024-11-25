@@ -16,6 +16,7 @@
 		0415A0B52AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0415A0B42AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift */; };
 		0430C8DF2AF7FA8E00FF7976 /* AStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0430C8DE2AF7FA8E00FF7976 /* AStack.swift */; };
 		044A50D92AF4FD59007179D9 /* ScaleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044A50D82AF4FD59007179D9 /* ScaleProvider.swift */; };
+		04575A5C2CF3C39400D3B275 /* Scale+Description.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04575A5B2CF3C38100D3B275 /* Scale+Description.swift */; };
 		046AA2F92AF518EC004AB58E /* ScaleEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046AA2F82AF518EC004AB58E /* ScaleEditorView.swift */; };
 		04A03C202AF583FE00242143 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A03C1F2AF583FE00242143 /* HomeViewModel.swift */; };
 		04D490132CF1ECDC00CC8989 /* Fretboard in Frameworks */ = {isa = PBXBuildFile; productRef = 04D490122CF1ECDC00CC8989 /* Fretboard */; };
@@ -54,6 +55,7 @@
 		0415A0B42AF2C29A002CC941 /* MultiScalesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiScalesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0430C8DE2AF7FA8E00FF7976 /* AStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AStack.swift; sourceTree = "<group>"; };
 		044A50D82AF4FD59007179D9 /* ScaleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleProvider.swift; sourceTree = "<group>"; };
+		04575A5B2CF3C38100D3B275 /* Scale+Description.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scale+Description.swift"; sourceTree = "<group>"; };
 		046AA2F82AF518EC004AB58E /* ScaleEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaleEditorView.swift; sourceTree = "<group>"; };
 		04A03C1F2AF583FE00242143 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		04BA03002AF7C251007DBF37 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		0415A0962AF2C299002CC941 /* MultiScales */ = {
 			isa = PBXGroup;
 			children = (
+				04575A5A2CF3C37500D3B275 /* Extensions */,
 				04BA03002AF7C251007DBF37 /* Info.plist */,
 				0426978E2AF6E48300847EBD /* Packages */,
 				0415A0972AF2C299002CC941 /* MultiScalesApp.swift */,
@@ -161,6 +164,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		04575A5A2CF3C37500D3B275 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				04575A5B2CF3C38100D3B275 /* Scale+Description.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		046AA2F72AF518D3004AB58E /* Views */ = {
@@ -335,6 +346,7 @@
 				044A50D92AF4FD59007179D9 /* ScaleProvider.swift in Sources */,
 				046AA2F92AF518EC004AB58E /* ScaleEditorView.swift in Sources */,
 				04EEF96A2AF5450200627548 /* ScaleEditorViewModel.swift in Sources */,
+				04575A5C2CF3C39400D3B275 /* Scale+Description.swift in Sources */,
 				0430C8DF2AF7FA8E00FF7976 /* AStack.swift in Sources */,
 				04A03C202AF583FE00242143 /* HomeViewModel.swift in Sources */,
 			);

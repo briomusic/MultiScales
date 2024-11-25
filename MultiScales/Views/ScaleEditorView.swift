@@ -46,9 +46,26 @@ struct ScaleEditorView: View {
 			ColorPicker("Set the scale color", selection: viewModel.$scale.tintColor)
 			
 			Toggle("active", isOn: viewModel.$scale.isActive)
+
+			ScaleDescriptionView(scale: viewModel.scale)
 		}
 		.listStyle(.insetGrouped)
     }
+}
+
+struct ScaleDescriptionView: View {
+	let scale: TintedScale
+	let myFont = Font
+		.system(size: 24)
+		.monospaced()
+
+	var body: some View {
+		VStack {
+			return Text(scale.scale.scaleDescription)
+				.font(myFont)
+				.frame(maxWidth: .infinity, alignment: .center)
+		}
+	}
 }
 
 struct ScaleEditorView_Previews: PreviewProvider {

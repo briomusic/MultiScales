@@ -13,7 +13,7 @@ import MusicTheory
 
 final class MultiScalesTests: XCTestCase {
 	
-	let fretProvider = FretProvider()
+	let fretProvider = FretProvider(fretRange: FretRange(lowestFret: 0, highestFret: 12))
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -82,10 +82,23 @@ final class MultiScalesTests: XCTestCase {
 									   tintColor: .blue)
 		
 		let colors = fretProvider.fretColors(for: [tintedScale1, tintedScale2], on: .e2)
-		let testColors: [[Color]] = [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]]
+		let testColors: [FingeringColors] = [
+			FingeringColors(colors: [.clear, .blue]),
+			FingeringColors(colors: [.clear, .clear]),
+			FingeringColors(colors: [.red, .blue]),
+			FingeringColors(colors: [.clear, .clear]),
+			FingeringColors(colors: [.red, .blue]),
+			FingeringColors(colors: [.clear, .clear]),
+			FingeringColors(colors: [.clear, .clear]),
+			FingeringColors(colors: [.red, .blue]),
+			FingeringColors(colors: [.clear, .clear]),
+			FingeringColors(colors: [.red, .blue]),
+			FingeringColors(colors: [.clear, .clear]),
+			FingeringColors(colors: [.red, .clear])
+		]
 		XCTAssertEqual(colors, testColors)
 	}
-	
+
 	func testFretboardForTwoScales() throws {
 		let tintedScale1 = TintedScale(scale: Scale(type: .pentatonicMinor, key: Key(type: .a)),
 									   tintColor: .red)
@@ -93,15 +106,30 @@ final class MultiScalesTests: XCTestCase {
 									   tintColor: .blue)
 		
 		let fretboard = fretProvider.fretboardConfiguration(for: [tintedScale1, tintedScale2])
-		let testFingerings: Dictionary<FretboardConfiguration.String, [[Color]]> = [
-			.a2: [[.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear], [.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue]],
-			.e4: [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]],
-			.g3: [[.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear], [.clear, .blue], [.clear, .clear], [.red, .blue]],
-			.d3: [[.clear, .clear], [.red, .clear], [.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue]],
-			.b3: [[.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear], [.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear]],
-			.e2: [[.clear, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .blue], [.clear, .clear], [.red, .clear]]
+		let testFingerings: Dictionary<FretboardConfiguration.String, [FingeringColors]> = [
+			.a2: [FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .clear]), FingeringColors(colors: [.clear, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue])],
+			.e4: [FingeringColors(colors: [.clear, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .clear])],
+			.g3: [FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .clear]), FingeringColors(colors: [.clear, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue])],
+			.d3: [FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .clear]), FingeringColors(colors: [.clear, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue])],
+			.b3: [FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .clear]), FingeringColors(colors: [.clear, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.clear, .clear])],
+			.e2: [FingeringColors(colors: [.clear, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .blue]), FingeringColors(colors: [.clear, .clear]), FingeringColors(colors: [.red, .clear])]
 		]
 		
 		XCTAssertEqual(fretboard.fingerings, testFingerings)
+	}
+	
+	func testSemitones() throws {
+		let e = Key(type: .e)
+		let f = Key(type: .f)
+		let g = Key(type: .g)
+		let c = Key(type: .g)
+
+		let expectedOne = e.semitones(to: f)
+		let expectedTwo = f.semitones(to: g)
+		let alsoTwo = g.semitones(to: f)
+		
+		XCTAssertEqual(expectedOne, 1)
+		XCTAssertEqual(expectedTwo, 2)
+		XCTAssertEqual(alsoTwo, 2)
 	}
 }
